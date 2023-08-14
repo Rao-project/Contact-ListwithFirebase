@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="image/contact_1.png">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Create Contact</title>
+    <link rel="stylesheet" href="css/pro.css">
+</head>
+<body> 
+    <div class="container-fluid">
+    <header>           
+            <div class="row">
+                <div class="col-sm-4">
+                  <img src="image/menu_FILL0_wght400_GRAD0_opsz48.png" id="img2" alt="icon" onclick="menu()" >
+                    <a href="index.html"><img src="image/contact_1.png" id="img1" alt="icon"></a><h4>&nbsp;Contacts</h4>
+               </div>
+          <div class="col-sm-5" > 
+            <input type="text" id="disabledTextInput" class="form-control" placeholder="Search" width="50px">
+          </div>
+         </header>
+    <main>        
+            <div class="row">
+                <div class="col-md-3" id="column">
+                    <br>
+                    <div class="card-12">
+                        <button onclick="myFunction()"class="dropbtn" id="btn_d"><img src="image/add_contact.png" id="main_im">&nbsp;Create Contact</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="fav.html">Fav-List</a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card-1 contact">
+                        <img src="image/3.png" id="icon_im">&nbsp;Contact
+                    </div>
+                    <div class="card-1">
+                        <img src="image/4.png" id="icon_im">&nbsp;Frequent
+                    </div>
+                    <div class="card-1">
+                        <img src="image/2.png" id="icon_im">&nbsp;Other Contacts<img src="image/8.png" id="icon_in"><style>#icon_in{float: right;width: 20px;}</style>
+                    </div><br>
+
+                    <h5>Fix and Manage</h5>
+                    <div class="card-1">
+                        <img src="image/5.png" id="icon_im">&nbsp;Manage and Fix
+                    </div>
+                    <div class="card-1">
+                        <img src="image/12.png" id="icon_im">&nbsp;Import
+                    </div>
+                    <div class="card-1">
+                        <img src="image/6.png" id="icon_im">&nbsp;Bin
+                    </div><br>
+
+                    <h5>Labels</h5>
+                    <div class="card-1">
+                        <img src="image/11.png" id="icon_im">&nbsp; Manage and Fix
+                    </div>
+                    <div class="card-1">
+                        <img src="image/11.png" id="icon_im">&nbsp; Manage and Fix
+                    </div>
+                </div>
+                <!-- jainish --> 
+                <div class="col-md-9" id="column_1">
+                              <div class="header" id="myHeader">
+                                                                                  
+                    <div class="pro">
+                        &nbsp;&nbsp;<img src="image/17.png" id="img002" class="user_image" onclick="upload_image()">
+                        <div class="wraper" ><input type="file" id='input_file'accept="image/*" onchange="previewImage(event),image_uploaded();"></div>
+                        <label for="img002">Label</label>
+                        <div class="save"><button type="submit" id="btn" class="upload">save</button></div>
+                    </div>
+                    <hr>
+                 </div>
+                    <div class="row">
+                        <div class="col-md-8" id="column">
+                            <div class="card-3">
+                                <img src="image/3.png" id="main_im"><input type="text" id="inp01" class="first_name" placeholder="First name " required>
+                            </div>
+                            <div class="card-3">
+                                <img src="image/9.png" id="main_im"><input type="text" id="inp01" class="last_name" placeholder="Last name"
+                                    required>
+                            </div>                      
+                            <div class="card-3">
+                                <img src="image/11.png" id="main_im"><input type="text" id="inp01" class="label_1" placeholder="Lable">
+                            </div>
+                            <div class="card-3">
+                                <img src="image/10.png" id="main_im"> <input required type="text" pattern="[0-9]{10}"
+                                    id="inp01"  class="phone_number_1" ondrop="return false;" onpaste="return false;"
+                                    onkeypress='return event.charCode>=48 && event.charCode<=57' name="phone"
+                                    placeholder="Phone number" maxlength="10" required>
+                            </div>
+                            <div class="card-3">
+                                <img src="image/11.png" id="main_im"><input type="text" id="inp01" class="label_2" placeholder="Lable">
+                            </div>
+                            <div class="card-3">
+                                <img src="image/10.png" id="main_im"> <input required type="text" pattern="[0-9]{10}"
+                                    id="inp01" class="phone_number_2" ondrop="return false;" onpaste="return false;"
+                                    onkeypress='return event.charCode>=48 && event.charCode<=57' name="phone"
+                                    placeholder="Phone number" maxlength="10">
+                            </div>
+                            <div class="card-3">
+                                <img src="image/mail_FILL0_wght400_GRAD0_opsz48.png" id="main_im"><input type="email"
+                                    id="inp01" class="email" placeholder="Email">
+                            </div>
+                            <div class="card-3">
+                                <img src="image/cake_FILL0_wght400_GRAD0_opsz48.png" id="main_im"><input type="date"
+                                    id="inp01" class="birthdate" placeholder="date">
+                            </div>
+                            <div class="card-3">
+                                <img src="image/note_FILL0_wght400_GRAD0_opsz48.png" id="main_im"><input type="text"
+                                    id="inp001" class="note" placeholder="Note">
+                            </div>
+                    </div>
+                </div> 
+            </div>
+    </main>
+<script src="Javascript/pro.js"></script>
+</body>
+
+</html>

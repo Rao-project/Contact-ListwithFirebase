@@ -1,0 +1,126 @@
+body {
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+}
+header{
+background-color: rgb(250, 250, 250);
+padding: 15px;
+}
+
+#img1,#img2{
+    margin-left:10px;
+    float: left;
+    width: 30px;
+}
+#icon_im{
+    width: 20px;}
+#main_im{
+      width: 30px;}
+#inp{
+    border-radius: 10px;
+    width: 100%;
+    padding:10px;
+}
+
+#column_1{
+  margin-top:40px ;
+} 
+.col-sm-3{
+    size: 100%;
+    background-color:rgb(255, 255, 255) ;
+}
+
+.card-1{
+  padding: 10px;
+  border-radius:0px 20px 20px 0px ;
+  cursor: pointer;
+}
+.card-1:hover{
+    opacity: 1;
+    background-color: rgb(247, 247, 247);
+}
+.card-2{
+    padding: 15px;
+    border-radius:5px;
+    cursor: pointer;
+  }
+  .card-2:hover{
+      opacity:0.5;
+      background-color: rgb(247, 247, 247);
+  }
+.edit{
+    padding-top:5px;
+    width: 18px;
+    float: right;
+    margin-left:9px ;
+}
+
+.fav_list{
+    padding-top:5px ;
+    width:18px ;
+    float: right;
+    margin-left:5px ;
+}
+.manu_list{
+  padding-top:5px ;
+  width:18px ;
+  float: right;
+  margin-left:5px ;
+}
+#btn_d{
+  padding:1px;
+}
+
+.card-12{
+    width:200px;
+    height:50px;
+    align-content: center;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);
+    transition: 0.5s;
+    border: 1px solid rgb(211, 202, 202);
+    border-radius: 60px;
+}
+.card-12:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.dropbtn {
+  width:100%;
+  background-color: #ffffff;
+  color: rgb(24, 24, 24);
+  padding: 16px;
+  font-size: 16px;
+  border:none;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  width:200px;
+  display: none;
+  border-radius:10px;
+  position: absolute;
+  background-color:#f3f3f3;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(0, 0, 0);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ffffff;}
+
+.show {display: block;}
+
+  
+
+
+
