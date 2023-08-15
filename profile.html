@@ -13,6 +13,7 @@
 </head>
 <body> 
     <div class="container-fluid">
+        <!-- header start here -->
     <header>           
             <div class="row">
                 <div class="col-sm-4">
@@ -22,15 +23,17 @@
           <div class="col-sm-5" > 
             <input type="text" id="disabledTextInput" class="form-control" placeholder="Search" width="50px">
           </div>
-         </header>
+    </header>
+    <!-- header ends here -->
+    <!-- main section start here -->
     <main>        
             <div class="row">
                 <div class="col-md-3" id="column">
                     <br>
                     <div class="card-12">
-                        <button onclick="myFunction()"class="dropbtn" id="btn_d"><img src="image/add_contact.png" id="main_im">&nbsp;Create Contact</button>
+                        <button onclick="dropDownFunction()"class="dropbtn" id="btn_d"><img src="image/add_contact.png" id="main_im">&nbsp;Create Contact</button>
                         <div id="myDropdown" class="dropdown-content">
-                            <a href="fav.html">Fav-List</a>
+                            <a href="favourite.html">Fav-List</a>
                         </div>
                     </div>
                     <br>
@@ -118,7 +121,49 @@
                 </div> 
             </div>
     </main>
-<script src="Javascript/pro.js"></script>
+    <!-- main section here -->
+    <!-- script tag for inner functionality -->
+<script>
+      // redirect function
+document.getElementsByClassName("contact")[0].addEventListener('click', function (event) 
+{
+    window.location.href="index.html";
+    console.log("clicked");
+}); 
+  // drop-down function
+function dropDownFunction() 
+{
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) 
+  {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) 
+    {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) 
+      {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+// dorop-down function ends here
+// function for display menu or hide menu
+function menu(){
+  var hide = document.getElementById("column");
+  if (hide.style.display === "none"){
+      hide.style.display = "block";
+  }else{
+      hide.style.display = "none";
+  }
+}
+// function ends here
+
+</script>
+<script type="module" src="Javascript/profile.js"></script>
 </body>
 
 </html>
