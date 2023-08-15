@@ -23,9 +23,9 @@
  const auth = getAuth(app);
  const provider = new GoogleAuthProvider();
  // Google sign with firebase
- console.log(header);
  let headShow = header;
  let mainShow = main;
+ let gooogleHide  =login_google;
  glogin.addEventListener('click',(e)=>{
      signInWithPopup(auth, provider)
          .then((result) => {
@@ -34,7 +34,6 @@
              const token = credential.accessToken;
              // The signed-in user info.
              const user = result.user;
-             
              //User name = displayName
             // email = email
              //photo = photoURl
@@ -45,7 +44,8 @@
              localStorage.setItem("photoURL",user.photoURL);
              alert("User Login : "+user.displayName);
              headShow.style.display = "block";
-            mainShow.style.display = "block"
+             mainShow.style.display = "block";
+             gooogleHide.style.display = "none";
              // IdP data available using getAdditionalUserInfo(result)
              // ...
          }).catch((error) => {

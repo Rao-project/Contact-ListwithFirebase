@@ -22,7 +22,7 @@ padding: 15px;
 #icon_im{
     width: 20px;
 }
-#inp01{
+.inp01{
    
     width: 90%;
     padding:4px;
@@ -30,7 +30,7 @@ padding: 15px;
     border-radius:5px;
     float: right;
 }
-#inp001{
+.inp001{
     width: 90%;
     padding-bottom:40px;
     border:1px solid black;
@@ -65,7 +65,7 @@ padding: 15px;
   }
 
 
-#img01{
+.img01{
     float: right;
     width: 20px;
 }
@@ -83,7 +83,7 @@ label
     margin-left: 40px;
 }
 label:hover{background-color: rgb(216, 216, 216);}
-#btn{ 
+.upload_button{ 
     background-color: #d3ebf1;
     padding:10px;
     border: none;
