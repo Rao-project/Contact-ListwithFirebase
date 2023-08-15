@@ -1,6 +1,6 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-  import { getAuth ,GoogleAuthProvider, signInWithPopup, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+  import { getAuth ,GoogleAuthProvider, signInWithPopup} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
       
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -23,6 +23,9 @@
  const auth = getAuth(app);
  const provider = new GoogleAuthProvider();
  // Google sign with firebase
+ console.log(header);
+ let headShow = header;
+ let mainShow = main;
  glogin.addEventListener('click',(e)=>{
      signInWithPopup(auth, provider)
          .then((result) => {
@@ -41,7 +44,8 @@
              localStorage.setItem("emailID",user.email);
              localStorage.setItem("photoURL",user.photoURL);
              alert("User Login : "+user.displayName);
-             window.location.href = 'Home.html';
+             headShow.style.display = "block";
+            mainShow.style.display = "block"
              // IdP data available using getAdditionalUserInfo(result)
              // ...
          }).catch((error) => {

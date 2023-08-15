@@ -161,6 +161,61 @@ function menu(){
   }
 }
 // function ends here
+// Convert image into basse64 and store in variable
+function upload_image() 
+{
+    document.getElementById('input_file').click();
+}
+const previewImage = (event) => {
+/**
+* Get the selected files.
+*/
+const imageFiles = event.target.files;
+/**
+* Count the number of files selected.
+*/
+const imageFilesLength = imageFiles.length;
+/**
+* If at least one image is selected, then proceed to display the preview.
+*/
+if (imageFilesLength > 0) {
+/**
+ * Get the image path.
+ */
+const imageSrc = URL.createObjectURL(imageFiles[0]);
+ 
+/**
+ * Select the image preview element.
+ */
+const imagePreviewElement = document.querySelector("#img002");
+/**
+ * Assign the path to the image preview element.
+ */
+imagePreviewElement.src = imageSrc;
+/**
+ * Show the element by changing the display value to "block".
+ */
+
+}
+};
+//Converts image in base64
+let imagebase64 = 0;
+function image_uploaded()
+{
+    let file = document.querySelector('input[type=file]')["files"][0];
+    let reader = new FileReader();
+    reader.onload = function () 
+    {
+        base64String = reader.result.replace("data:", "")
+            .replace(/^.+,/, "");
+
+        imageBase64Stringsep = base64String;
+        imagebase64 = base64String;
+        localStorage.setItem("image",imagebase64);
+        // alert(imageBase64Stringsep);
+    }
+    reader.readAsDataURL(file);
+}
 
 </script>
 <script type="module" src="Javascript/profile.js"></script>
