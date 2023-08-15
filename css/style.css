@@ -5,7 +5,15 @@ header{
 background-color: rgb(250, 250, 250);
 padding: 15px;
 }
-
+/* hide content */
+header
+{
+  display: none;
+}
+main
+{
+  display: none;
+}
 #img1,#img2{
     margin-left:10px;
     float: left;
