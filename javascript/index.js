@@ -46,6 +46,7 @@
              headShow.style.display = "block";
              mainShow.style.display = "block";
              gooogleHide.style.display = "none";
+
              // IdP data available using getAdditionalUserInfo(result)
              // ...
          }).catch((error) => {
