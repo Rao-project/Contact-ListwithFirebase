@@ -22,10 +22,6 @@
  console.log(app);
  const auth = getAuth(app);
  const provider = new GoogleAuthProvider();
- // Google sign with firebase
- let headShow = header;
- let mainShow = main;
- let gooogleHide  =login_google;
  glogin.addEventListener('click',(e)=>{
      signInWithPopup(auth, provider)
          .then((result) => {
@@ -43,10 +39,7 @@
              localStorage.setItem("emailID",user.email);
              localStorage.setItem("photoURL",user.photoURL);
              alert("User Login : "+user.displayName);
-             headShow.style.display = "block";
-             mainShow.style.display = "block";
-             gooogleHide.style.display = "none";
-
+            window.location.href = "contact.html"
              // IdP data available using getAdditionalUserInfo(result)
              // ...
          }).catch((error) => {
