@@ -32,7 +32,7 @@ function InsertData()
 {
     try 
     {
-        const docRef = addDoc(collection(db, `${user_mailID}`), {
+        const docRef = addDoc(collection(db, 'Userdetails'), {
             firstName:first_name.value,
             lastName:last_name.value,
             label1:label_1.value,
@@ -47,7 +47,7 @@ function InsertData()
         });
         console.log("Document written with ID: ", `${docRef.id}`);
         alert("Data inserted Succesfully");
-        window.location.href = '';
+        // window.location.href = '';
         // first_name.value = "";
         // last_name.value = "";
         // label_1.value = "";
