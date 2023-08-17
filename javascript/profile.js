@@ -30,76 +30,45 @@ let user_mailID = localStorage.getItem('emailID');
 
 function InsertData()
 {
-    try 
-    {
-        const docRef = addDoc(collection(db, 'Userdetails'), {
-            firstName:first_name.value,
-            lastName:last_name.value,
-            label1:label_1.value,
-            phoneNumber1:phone_number_1.value,
-            label2:label_2.value,
-            phoneNumber2:phone_number_2.value,
-            eMail:email.value,
-            // birthDate:birthdate,
-            noteText:note.value,
-            userImage:user_image,
-            userMailid:user_mailID
-        });
-        console.log("Document written with ID: ", `${docRef.id}`);
-        alert("Data inserted Succesfully");
-        // window.location.href = '';
-        // first_name.value = "";
-        // last_name.value = "";
-        // label_1.value = "";
-        // phone_number_1.value = "";
-        // label_2.value = "";
-        // phone_number_2.value = "";
-        // email.value = "";
-        // birthdate.value =  "";
-        // note.value = "";
-        // user_image = "";
+    if (first_name.value != ""||last_name.value !=""||label_1.value !=""||phone_number_1.value !=""||label_2.value !=""||
+    phone_number_2.value !=""||email.value !="" ||birthdate.value !=""||note.value !="")
+    {   
+        try 
+        {
+            const docRef = addDoc(collection(db, 'Userdetails'), {
+                firstName:first_name.value,
+                lastName:last_name.value,
+                label1:label_1.value,
+                phoneNumber1:phone_number_1.value,
+                label2:label_2.value,
+                phoneNumber2:phone_number_2.value,
+                eMail:email.value,
+                birthDate:birthdate.value,
+                noteText:note.value,
+                userImage:user_image,
+                userMailid:user_mailID
+            });
+            console.log("Document written IN DATABASE ");
+            alert("Data inserted Succesfully");
+            first_name.value = "";
+            last_name.value = "";
+            label_1.value = "";
+            phone_number_1.value = "";
+            label_2.value = "";
+            phone_number_2.value = "";
+            email.value = "";
+            birthdate.value =  "";
+            note.value = "";
+            user_image = "";
+        }  
+        catch (e) 
+        {
+            console.error("Error adding document: ", e);
+        };
     } 
-    catch (e) 
+    else
     {
-        console.error("Error adding document: ", e);
+        alert("Please fill all the fields");
     }
-    //    // set object into rtdb
-    //  ref(db,"/Userdetails".push({
-    //    
-        
-    // }))
-   
-    // set(ref(db,"/UserDetails"),
-    // {
-     
-//     // })
-//     const postsRef = ref(db,"/DIVYESH");
-//     // const newPostRef = postsRef.push();
-//     // newPostRef.set({
-//     //   author: 'gracehop',
-//     //   title: 'Announcing COBOL, a New Programming Language'
-//     // });
-//    console.log(postsRef); 
-    // // we can also chain the two calls together
-    // postsRef.push().set({
-    //   author: 'alanisawesome',
-    //   title: 'The Turing Machine'
-    // });
-    // .then(() =>{
-    //     alert("Data inserted Succesfully");
-    //     first_name.value = "";
-    //     last_name.value = "";
-    //     label_1.value = "";
-    //     phone_number_1.value = "";
-    //     label_2.value = "";
-    //     phone_number_2.value = "";
-    //     email.value = "";
-    //     birthdate.value =  "";
-    //     note.value = "";
-    //     user_image = "";
-    // })
-    // .catch((error) =>{
-    //     alert("Unsuccessful "+error);
-    // })
 }
 upload.addEventListener('click',InsertData);

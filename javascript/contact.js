@@ -23,26 +23,26 @@ console.log(app);
 const db = getFirestore(app);
 console.log(db);
 
-let user_mailID = localStorage.getItem('emailID');
-
-
 const q = query(collection(db, "/Userdetails"))
-let div = contact.innerHTML;
+// let detail = contactdetails.innerHTML;
 const con = onSnapshot(q, (QuerySnapshot) => {
     const fetchContact = [];
-    QuerySnapshot.forEach((doc) => {
+    QuerySnapshot.forEach((doc) => 
+    {
         fetchContact.push({ ...doc.data(), id: doc.id });
     });
+    var html = "<div>"
     console.log('FetchContact', fetchContact);
-    fetchContact.map((data) =>{
-       console.log(data.firstName);
-       console.log(data.phoneNumber1);
-        let div = 
-        `<tr>
-          <th>${data.firstName}</th>
-          <th>${data.lastName}</th>
-          <th>${data.phoneNumber1}</th>
-         </tr>`;
-         contactdetail.innerHTML = div;
-    })
+    fetchContact.map((data) =>
+    {
+      console.log(data.id);
+      html += '<div class="card-2">';
+      html += '<div class="row">';
+      html += `<div class="col">${data.firstName}</div>`;
+      html += `<div class="col">${data.phoneNumber1}</div>`;
+      html += `<div class="col"><img src="image/25.png" class="manu_list"><img src="image/15.png"  class="edit"><img src="image/21.png" class="fav_list" ></div>`;
+      html += '</div></div>';
+   
+    });
+    document.getElementById("contactDetails").innerHTML = html;
 });
