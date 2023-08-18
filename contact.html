@@ -63,23 +63,14 @@
           <!-- contact list -->
         
             <div class="col-md-9" id="column_1">
-              <div class="card-2">                                     
+              <div class="card-02">                                     
                   <div class="row">
                     <div class="col"><h6>NAME</h6></div>
                     <div class="col"><h6>NUMBER</h6></div>  
-                    <div class="col">.</div>      
+                    <div class="col"></div>      
               </div>
           </div>                     
-          <hr>                  
-              <div class="card-2" id="contact">                                   
-                <div class="row">                    
-                  <div class="col">jainish</div>
-                  <div class="col">  9313794668</div>
-                  <div class="col">
-                    <img src="image/25.png" class="manu_list" ><img src="image/15.png"  class="edit"><img src="image/21.png" class="fav_list" >
-                  </div>
-                </div>
-              </div>
+          <hr>
             <div id="contactDetails"></div>
       </div>
      
@@ -117,13 +108,20 @@ window.onclick = function(event) {
 // function for display menu or hide menu
 function menu(){
   var hide = document.getElementById("column");
-  if (hide.style.display === "none"){
+  if (hide.style.display === "none")
+  {
       hide.style.display = "block";
-  }else{
+  }
+  else
+  {
       hide.style.display = "none";
   }
 }
 // function ends here
+function editcontact(id)
+{
+  window.location.href = "profile.html?"+ id;
+}
 </script>
 <!-- script tag for module and firebase setup -->
 <script type="module" src="/javascript/contact.js"></script>

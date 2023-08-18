@@ -72,9 +72,9 @@
                             <div class="wraper" >
                                 <input type="file" id='input_file'accept="image/*" onchange="previewImage(event),image_uploaded();">
                             </div>
-                                <label for="img002">Label</label>
                                 <div class="save">
                                     <button type="submit" id="upload" class="upload_button">save</button>
+                                    <button type="submit" id="update" class="upload_button">Update</button>
                                 </div>
                             </div>
                         <hr>
@@ -120,6 +120,7 @@
     <!-- main section here -->
     <!-- script tag for inner functionality -->
 <script>
+
       // redirect function
 document.getElementsByClassName("contact")[0].addEventListener('click', function (event) 
 {
@@ -196,6 +197,7 @@ function image_uploaded()
     }
     reader.readAsDataURL(file);
 }
+
 // converts image in base ends here
 </script>
 <!-- script tag for firebase setup and funationality -->

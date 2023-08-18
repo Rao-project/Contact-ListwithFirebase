@@ -36,13 +36,13 @@ const con = onSnapshot(q, (QuerySnapshot) => {
     fetchContact.map((data) =>
     {
       console.log(data.id);
-      html += '<div class="card-2">';
+      html += `<div class="card-2" id='${data.id}' onclick="editcontact(this.id)">`;
       html += '<div class="row">';
       html += `<div class="col">${data.firstName}</div>`;
       html += `<div class="col">${data.phoneNumber1}</div>`;
-      html += `<div class="col"><img src="image/25.png" class="manu_list"><img src="image/15.png"  class="edit"><img src="image/21.png" class="fav_list" ></div>`;
+      html += `<div class="col"><img src="image/25.png" class="manu_list"><img src="image/15.png"class="edit"><img src="image/21.png" class="fav_list" ></div>`;
       html += '</div></div>';
    
-    });
+    })
     document.getElementById("contactDetails").innerHTML = html;
 });
