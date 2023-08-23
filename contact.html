@@ -67,12 +67,13 @@
                   <div class="row">
                     <div class="col"><h6>NAME</h6></div>
                     <div class="col"><h6>NUMBER</h6></div>  
-                    <div class="col"></div>      
+                    <div class="col text-right">ACTION</div>      
               </div>
           </div>                     
           <hr>
             <div id="contactDetails">
-              <h1>no data found</h1>
+              <div class="loader"></div><h3 class="text-center">Data was Loading</h3>
+              <h1 class="text-center" id="nodatafound">No contacts found</h1>
             </div>
       </div>
      
@@ -141,6 +142,7 @@ window.onload=validate();
 // Search contact 
 const nameInput =  document.getElementById("disabledTextInput");
 const contactList = document.getElementById('contactDetails');
+const noData = document.getElementById('nodatafound');
 function searchContact()
 {
  const searchTerm = nameInput.value.toLowerCase();
@@ -152,6 +154,9 @@ function searchContact()
 
             if (contactName.includes(searchTerm)) {
                 contact.style.display = 'block';
+                if(contact === null){
+                  noData.style.display="block"
+                }
             } else {
               // const data = document.getElementById("data");
               contact.style.display = 'none'; 

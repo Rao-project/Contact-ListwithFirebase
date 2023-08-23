@@ -27,7 +27,6 @@ console.log(db);
 var user_image = localStorage.getItem('image');
 let user_mailID = localStorage.getItem('emailID');
 update.style.display="none";
-// first_name.style.borderColor = "red";
 
 upload.addEventListener('click',function(e) {
     e.preventDefault();
@@ -167,6 +166,7 @@ function InsertData()
         catch (e) 
         {
             console.error("Error adding document: ", e);
+            alert("Error adding document: ", e)
         };
     } 
 
@@ -175,14 +175,18 @@ function InsertData()
 const queryString = window.location.search;
 const newstr = queryString.substring(1,queryString.length);
 console.log(newstr);
+
 //get data from user id from firestore
-const docRef = doc(db, "Userdetails",newstr);
+let docRef = doc(db, "Userdetails",newstr);
 try 
 {
     const docSnap = await getDoc(docRef);
     if(docSnap.exists()) {
         console.log(docSnap.data());
         let data = docSnap.data();
+        if(data === null){
+            main.style.backgroundColor = "red";
+        }
             first_name.value = `${data.firstName}`;
             last_name.value = `${data.lastName}`;
             label_1.value = `${data.label1}`;
@@ -218,7 +222,7 @@ function updateContact()
         eMail:email.value,
         birthDate:birthdate.value,
         noteText:note.value,
-        userImage:user_image,
+        userImage:user_image
     }
     console.log(data);
     updateDoc(docRef, data)
@@ -233,4 +237,4 @@ function updateContact()
         console.log(error);
     });
 }
-update.addEventListener('click',updateContact);
+// update.addEventListener('click',updateContact());

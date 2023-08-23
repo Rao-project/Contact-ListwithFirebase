@@ -23,7 +23,7 @@ console.log(app);
 const db = getFirestore(app);
 console.log(db);
 
-const q = query(collection(db, "/Userdetails"))
+const q = query(collection(db, "/Userdetails"));
 // let detail = contactdetails.innerHTML;
 
 let fetchContact = 0;

@@ -74,6 +74,11 @@ padding: 15px;
     width:150px;
     height: 160px;
     border-radius: 50%;
+    cursor: pointer;
+}
+.edit {
+  margin-left: 2%;
+  margin-bottom: -3%;
 }
 label 
 {
@@ -157,4 +162,28 @@ label:hover{background-color: rgb(216, 216, 216);}
 
 .error-border {
   border: 1px solid red;
+}
+/* css for loader */
+.loader {
+  position: relative;
+  margin-top: 20%;
+  margin-left: 35%;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

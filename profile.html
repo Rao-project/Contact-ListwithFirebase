@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,228 +10,255 @@
     <title>Create Contact</title>
     <link rel="stylesheet" href="css/profile.css">
 </head>
-<body> 
-    <div class="container-fluid">
-        <!-- header start here -->
-    <header>           
-            <div class="row">
-                <div class="col-sm-4">
-                  <img src="image/menu_FILL0_wght400_GRAD0_opsz48.png" id="img2" alt="icon" onclick="menu()" >
-                    <a href="contact.html"><img src="image/contact_1.png" id="img1" alt="icon"></a><h4>&nbsp;Contacts</h4>
-               </div>
-          <div class="col-sm-5" > 
+
+<body>
+<div class="container-fluid">
+<!-- header start here -->
+<header>
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="image/menu_FILL0_wght400_GRAD0_opsz48.png" id="img2" alt="icon" onclick="menu()">
+            <a href="contact.html"><img src="image/contact_1.png" id="img1" alt="icon"></a>
+            <h4>&nbsp;Contacts</h4>
+        </div>
+        <div class="col-sm-5">
             <input type="text" id="disabledTextInput" class="form-control" placeholder="Search" width="50px">
-          </div>
-    </header>
-    <!-- header ends here -->
-    <!-- main section start here -->
-    <main>        
-            <div class="row">
-                <div class="col-md-3" id="column">
-                    <br>
-                    <div class="card-12">
-                        <button onclick="dropDownFunction()"class="dropbtn" id="btn_d"><img src="image/add_contact.png" id="main_im">&nbsp;Create Contact</button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <a href="favourite.html">Fav-List</a>
+        </div>
+</header>
+<!-- header ends here -->
+<!-- main section start here -->
+<main id="main">
+    <div class="row">
+        <div class="col-md-3" id="column">
+            <br>
+            <div class="card-12">
+                <button onclick="dropDownFunction()" class="dropbtn" id="btn_d"><img src="image/add_contact.png"
+                        id="main_im">&nbsp;Create Contact</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="favourite.html">Fav-List</a>
+                </div>
+            </div>
+            <br>
+            <div class="card-1 contact">
+                <img src="image/3.png" id="icon_im">&nbsp;Contact
+            </div>
+            <div class="card-1">
+                <img src="image/4.png" id="icon_im">&nbsp;Frequent
+            </div>
+            <div class="card-1">
+                <img src="image/2.png" id="icon_im">&nbsp;Other Contacts<img src="image/8.png" id="icon_in">
+                <style>
+                    #icon_in {
+                        float: right;
+                        width: 20px;
+                    }
+                </style>
+            </div><br>
+
+            <h5>Fix and Manage</h5>
+            <div class="card-1">
+                <img src="image/5.png" id="icon_im">&nbsp;Manage and Fix
+            </div>
+            <div class="card-1">
+                <img src="image/12.png" id="icon_im">&nbsp;Import
+            </div>
+            <div class="card-1">
+                <img src="image/6.png" id="icon_im">&nbsp;Bin
+            </div><br>
+
+            <h5>Labels</h5>
+            <div class="card-1">
+                <img src="image/11.png" id="icon_im">&nbsp; Manage and Fix
+            </div>
+            <div class="card-1">
+                <img src="image/11.png" id="icon_im">&nbsp; Manage and Fix
+            </div>
+        </div>
+        <!-- jainish -->
+        <div class="col-md-9" id="column_1">
+            <div class="header" id="myHeader">
+                <!-- form tag start here -->
+                <form>
+                    <div class="pro">
+                        &nbsp;&nbsp;<img src="image/17.png" id="img002" class="user_image"
+                            onclick="upload_image()">
+                        <div class="edit"><i class="fa fa-pencil fa-lg">Edit Picture</i></div>
+                        <div class="wraper">
+                            <input type="file" id='input_file' accept="image/*"
+                                onchange="previewImage(event),image_uploaded();">
+                        </div>
+                        <div class="save">
+                            <button id="update" class="upload_button">Update</button>
+                            <input type="submit" id="upload" class="upload_button" value="save">
                         </div>
                     </div>
-                    <br>
-                    <div class="card-1 contact">
-                        <img src="image/3.png" id="icon_im">&nbsp;Contact
+                    <hr>
+            </div>
+            <!-- input fields start here -->
+            <div class="row">
+                <div class="col-md-8" id="column">
+                    <div class="card-3 ">
+                        <img src="image/3.png" id="main_im"><input type="text" id="first_name"
+                            oninput="firstNameChange()" class="inp01" placeholder="First name ">
+                        <span id="error1" class="error"></span>
                     </div>
-                    <div class="card-1">
-                        <img src="image/4.png" id="icon_im">&nbsp;Frequent
+                    <div class="card-3 ">
+                        .<input type="text" id="last_name" class="inp01" placeholder="Last name">
+                        <span id="error2" class="error"></span>
                     </div>
-                    <div class="card-1">
-                        <img src="image/2.png" id="icon_im">&nbsp;Other Contacts<img src="image/8.png" id="icon_in"><style>#icon_in{float: right;width: 20px;}</style>
-                    </div><br>
-
-                    <h5>Fix and Manage</h5>
-                    <div class="card-1">
-                        <img src="image/5.png" id="icon_im">&nbsp;Manage and Fix
+                    <div class="card-3">
+                        <img src="image/11.png" id="main_im"><input type="text" id="label_1" class="inp01"
+                            placeholder="Home">
+                        <span id="error3" class="error"></span>
                     </div>
-                    <div class="card-1">
-                        <img src="image/12.png" id="icon_im">&nbsp;Import
+                    <div class="card-3 ">
+                        <img src="image/10.png" id="main_im"> <input type="text" pattern="[0-9]{10}"
+                            id="phone_number_1" class="inp01" ondrop="return false;" onpaste="return false;"
+                            onkeypress='return event.charCode>=48 && event.charCode<=57' name="phone"
+                            placeholder="Phone number" maxlength="10">
+                        <span id="error4" class="error"></span>
                     </div>
-                    <div class="card-1">
-                        <img src="image/6.png" id="icon_im">&nbsp;Bin
-                    </div><br>
-
-                    <h5>Labels</h5>
-                    <div class="card-1">
-                        <img src="image/11.png" id="icon_im">&nbsp; Manage and Fix
+                    <div class="card-3 ">
+                        <img src="image/11.png" id="main_im"><input type="text" id="label_2" class="inp01"
+                            placeholder="Office">
+                        <span id="error5" class="error"></span>
                     </div>
-                    <div class="card-1">
-                        <img src="image/11.png" id="icon_im">&nbsp; Manage and Fix
+                    <div class="card-3 ">
+                        <img src="image/10.png" id="main_im"> <input type="text" pattern="[0-9]{10}"
+                            id="phone_number_2" class="inp01" ondrop="return false;" onpaste="return false;"
+                            onkeypress='return event.charCode>=48 && event.charCode<=57' name="phone"
+                            placeholder="Phone number" maxlength="10">
+                        <span id="error6" class="error"></span>
+                    </div>
+                    <div class="card-3 ">
+                        <img src="image/mail_FILL0_wght400_GRAD0_opsz48.png" id="main_im"><input type="email"
+                            id="email" class="inp01" placeholder="Email">
+                        <span id="error7" class="error"></span>
+                    </div>
+                    <div class="card-3 ">
+                        <img src="image/cake_FILL0_wght400_GRAD0_opsz48.png" id="main_im"><input type="text"
+                            id="birthdate" class="inp01" placeholder="DD-MM-YYYY" onfocus="(this.type='date')"
+                            onblur="(this.type='text')">
+                        <span id="error8" class="error"></span>
+                    </div>
+                    <div class="card-3 ">
+                        <img src="image/note_FILL0_wght400_GRAD0_opsz48.png" id="main_im"><input type="text"
+                            id="note" class="inp001" placeholder="Note">
+                        <span id="error9" class="error"></span>
                     </div>
                 </div>
-                <!-- jainish --> 
-                <div class="col-md-9" id="column_1">
-                    <div class="header" id="myHeader">
-                        <!-- form tag start here -->
-                     <form >
-                        <div class="pro">
-                            &nbsp;&nbsp;<img src="image/17.png" id="img002" class="user_image" onclick="upload_image()">
-                            <div class="wraper" >
-                                <input type="file" id='input_file'accept="image/*" onchange="previewImage(event),image_uploaded();">
-                            </div>
-                                <div class="save">
-                                    <button id="update" class="upload_button">Update</button>
-                                    <input type="submit"  id="upload" class="upload_button" value="save">
-                                </div>
-                            </div>
-                        <hr>
-                        </div>
-                        <!-- input fields start here -->
-                        <div class="row">
-                            <div class="col-md-8" id="column">
-                                <div class="card-3 ">
-                                    <img src="image/3.png" id="main_im"><input type="text" id="first_name" class="inp01" placeholder="First name ">
-                                    <span id="error1" class="error"></span> 
-                                </div>
-                                <div class="card-3 error ">
-                                     .<input type="text" id="last_name" class="inp01" placeholder="Last name">
-                                     <span id="error2" class="error"></span> 
-                                </div>                      
-                                <div class="card-3">
-                                    <img src="image/11.png" id="main_im"><input type="text" id="label_1" class="inp01" placeholder="Home" >
-                                    <span id="error3"class="error" ></span>
-                                </div>
-                                <div class="card-3 ">
-                                    <img src="image/10.png" id="main_im"> <input type="text" pattern="[0-9]{10}" id="phone_number_1" class="inp01" ondrop="return false;" onpaste="return false;"
-                                        onkeypress='return event.charCode>=48 && event.charCode<=57' name="phone" placeholder="Phone number" maxlength="10" >
-                                        <span id="error4"class="error" ></span>
-                                </div>
-                                <div class="card-3 ">
-                                    <img src="image/11.png" id="main_im"><input type="text" id="label_2" class="inp01" placeholder="Office" >
-                                    <span id="error5"class="error" ></span>
-                                </div>
-                                <div class="card-3 ">
-                                    <img src="image/10.png" id="main_im"> <input type="text" pattern="[0-9]{10}" id="phone_number_2" class="inp01" ondrop="return false;" onpaste="return false;"
-                                        onkeypress='return event.charCode>=48 && event.charCode<=57' name="phone" placeholder="Phone number" maxlength="10" >
-                                        <span id="error6" class="error"></span>
-                                </div>
-                                <div class="card-3 ">
-                                    <img src="image/mail_FILL0_wght400_GRAD0_opsz48.png" id="main_im"><input type="email" id="email" class="inp01" placeholder="Email" >
-                                    <span id="error7"class="error" ></span>
-                                </div>
-                                <div class="card-3 ">
-                                    <img src="image/cake_FILL0_wght400_GRAD0_opsz48.png" id="main_im"><input type="text" id="birthdate" class="inp01"placeholder="DD-MM-YYYY"onfocus="(this.type='date')"
-                                    onblur="(this.type='text')" >
-                                    <span id="error8"class="error" ></span>
-                                </div>
-                                <div class="card-3 ">
-                                    <img src="image/note_FILL0_wght400_GRAD0_opsz48.png" id="main_im"><input type="text" id="note" class="inp001" placeholder="Note" >
-                                    <span id="error9"class="error" ></span> 
-                                </div>
-                            </div>
-                        </div> 
-                        <!-- input fiels ends here -->
-                        </form>
-                        <!-- form tag ends here -->
             </div>
-    </main>
-    <!-- main section here -->
-    <!-- script tag for inner functionality -->
+            <!-- input fiels ends here -->
+            </form>
+            <!-- form tag ends here -->
+            <div class="loader"></div>
+        </div>
+
+</main>
+<!-- main section here -->
+<!-- script tag for inner functionality -->
 <script>
 
-      // redirect function
-document.getElementsByClassName("contact")[0].addEventListener('click', function (event) 
-{
-    window.location.href="contact.html";
-    console.log("clicked");
-}); 
-  // drop-down function
-function dropDownFunction() 
-{
-  document.getElementById("myDropdown").classList.toggle("show");
+
+// function for chnage color when data is inputed 
+function firstNameChange() {
+    let error = document.getElementById("error1");
+    let firstname = document.getElementById(first_name);
+        error.textContent = "";
+    first_name.style.borderColor = "initial";
+    console.log("EVENT OF FISDT NAME");
 }
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) 
-  {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) 
-    {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) 
-      {
-        openDropdown.classList.remove('show');
-      }
+
+// redirect function
+document.getElementsByClassName("contact")[0].addEventListener('click', function (event) {
+    window.location.href = "contact.html";
+    console.log("clicked");
+});
+// drop-down function
+function dropDownFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
     }
-  }
 }
 // dorop-down function ends here
 // function for display menu or hide menu
-function menu(){
-  var hide = document.getElementById("column");
-  if (hide.style.display === "none"){
-      hide.style.display = "block";
-  }else{
-      hide.style.display = "none";
-  }
+function menu() {
+    var hide = document.getElementById("column");
+    if (hide.style.display === "none") {
+        hide.style.display = "block";
+    } else {
+        hide.style.display = "none";
+    }
 }
 // function ends here
 // Convert image into basse64 and store in variable
-function upload_image() 
-{
+function upload_image() {
     document.getElementById('input_file').click();
 }
 const previewImage = (event) => {
-//Get the selected files.
-const imageFiles = event.target.files;
-//Count the number of files selected.
-const imageFilesLength = imageFiles.length;
-//If at least one image is selected, then proceed to display the preview.
-if (imageFilesLength > 0) {
-//Get the image path.
-const imageSrc = URL.createObjectURL(imageFiles[0]);
-// Select the image preview element.
-const imagePreviewElement = document.querySelector("#img002");
-//Assign the path to the image preview element.
-imagePreviewElement.src = imageSrc;
-//Show the element by changing the display value to "block".
-}
+    //Get the selected files.
+    const imageFiles = event.target.files;
+    //Count the number of files selected.
+    const imageFilesLength = imageFiles.length;
+    //If at least one image is selected, then proceed to display the preview.
+    if (imageFilesLength > 0) {
+        //Get the image path.
+        const imageSrc = URL.createObjectURL(imageFiles[0]);
+        // Select the image preview element.
+        const imagePreviewElement = document.querySelector("#img002");
+        //Assign the path to the image preview element.
+        imagePreviewElement.src = imageSrc;
+        //Show the element by changing the display value to "block".
+    }
 };
 //Converts image in base64
 let imagebase64 = 0;
-function image_uploaded()
-{
+function image_uploaded() {
     let file = document.querySelector('input[type=file]')["files"][0];
     let reader = new FileReader();
-    reader.onload = function () 
-    {
+    reader.onload = function () {
         base64String = reader.result.replace("data:", "")
             .replace(/^.+,/, "");
 
         imageBase64Stringsep = base64String;
         imagebase64 = base64String;
-        localStorage.setItem("image",imagebase64);
+        localStorage.setItem("image", imagebase64);
         // alert(imageBase64Stringsep);
     }
     reader.readAsDataURL(file);
 }
 // converts image in base ends here
 // Check user is log in or not
-window.onload=validate();
-  function validate()
-  {
+window.onload = validate();
+function validate() {
     var emailID = localStorage.getItem('emailID');
-    if (emailID != null)
-    {
-     console.log("User loged IN");
+    if (emailID != null) {
+        console.log("User loged IN");
     }
-    else 
-    {
-      window.location.href="index.html";
+    else {
+        window.location.href = "index.html";
     }
-  }
-</script>
-<!-- script tag for firebase setup and funationality -->
-<script type="module" src="javascript/profile.js"></script>
-<!-- script tag for bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+}
+        </script>
+        <!-- script tag for firebase setup and funationality -->
+        <script type="module" src="javascript/profile.js"></script>
+        <!-- script tag for bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
