@@ -18,7 +18,7 @@
                   <a href="contact.html"><img src="image/contact_1.png" id="img1" alt="icon"></a><h4>&nbsp;Contacts</h4>
              </div>
         <div class="col-sm-5" > 
-          <input type="text" id="disabledTextInput" class="form-control" placeholder="Search" width="50px">
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="Search" width="50px" onkeyup="searchContact()">
         </div>
      
        </header>
@@ -71,7 +71,9 @@
               </div>
           </div>                     
           <hr>
-            <div id="contactDetails"></div>
+            <div id="contactDetails">
+              <h1>no data found</h1>
+            </div>
       </div>
      
     </main>
@@ -121,6 +123,40 @@ function menu(){
 function editcontact(id)
 {
   window.location.href = "profile.html?"+ id;
+}
+// Check user is log in or not
+window.onload=validate();
+  function validate()
+  {
+    var emailID = localStorage.getItem('emailID');
+    if (emailID != null)
+    {
+     console.log("User loged IN");
+    }
+    else 
+    {
+      window.location.href="index.html";
+    }
+  }
+// Search contact 
+const nameInput =  document.getElementById("disabledTextInput");
+const contactList = document.getElementById('contactDetails');
+function searchContact()
+{
+ const searchTerm = nameInput.value.toLowerCase();
+ const contacts = contactList.getElementsByClassName('contact');
+ for  (const contact of contacts)
+ {
+    const contactName = contact.textContent.toLowerCase();
+
+
+            if (contactName.includes(searchTerm)) {
+                contact.style.display = 'block';
+            } else {
+              // const data = document.getElementById("data");
+              contact.style.display = 'none'; 
+            }
+  }
 }
 </script>
 <!-- script tag for module and firebase setup -->

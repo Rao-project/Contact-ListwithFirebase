@@ -149,3 +149,12 @@ label:hover{background-color: rgb(216, 216, 216);}
 .wraper{
     display: none;
 }
+/* validation css */
+#column_1 .card-3 span{
+  color: red;
+  margin-left: 10%;
+}
+
+.error-border {
+  border: 1px solid red;
+}

@@ -21,7 +21,7 @@
         position:relative;
         align-items: center;
         justify-content: center;
-        background-color: #949692a2;
+        background-color: #3c3d3b;
         color: rgb(255, 255, 255);
         border: none;
         border-radius: 4px;
@@ -31,7 +31,7 @@
       }
       
       .google-button:hover {
-        background-color: #dddddd;
+        background-color: #716f6f;
       }
       #Google_logo{
         width: 30px;
@@ -45,7 +45,9 @@
       }
       .main_front{
         position: absolute;
-        background:url('https://cdn.svgator.com/images/2022/06/SVG-background-animation.gif');
+        padding-top: calc(100%/4.5);
+        background:url('/image/background.jpg');
+        background-size: cover;
         width: 100%;
         height: 100%;
       }
@@ -61,7 +63,7 @@
             <h1>Login with Google</h1>
             <button id="glogin" class="google-button">
                 <div class="google-button__icon">
-                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"  id="Google_logo">
+                    <img src="/image/google.png"  id="Google_logo">
                 </div>
                 <span class="google-button__text">Sign in with Google</span>
             </button>

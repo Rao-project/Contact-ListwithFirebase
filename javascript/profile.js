@@ -24,15 +24,119 @@ const db = getFirestore(app);
 console.log(db);
 // get element reference
 
-let user_image = localStorage.getItem('image')
+var user_image = localStorage.getItem('image');
 let user_mailID = localStorage.getItem('emailID');
 update.style.display="none";
+// first_name.style.borderColor = "red";
+
+upload.addEventListener('click',function(e) {
+    e.preventDefault();
+    checkData();
+});
+
+function checkData(){
+let fname = first_name.value;
+let lname  = last_name.value;
+let label1 = label_1.value;
+let number1 = phone_number_1.value;
+let label2 = label_2.value;
+let number2 = phone_number_2.value;
+let Email = email.value;
+let bdate = birthdate.value;
+let notetext = note.value;
+    let isValid = true;
+    if(fname.trim()  === ""){
+
+        isValid = false;
+        error1.textContent = "*This field is required";
+        first_name.style.borderColor = "red"
+    }
+    else{
+        error1.textContent = "";
+        first_name.style.borderColor = "initial";
+      
+    }
+    if(lname.trim() === ""){
+        isValid = false;
+        error2.textContent = "*This field is required";
+        last_name.style.borderColor = "red"
+    }
+    else{
+        error2.textContent = "";
+        last_name.style.borderColor = "initial";
+    }
+    if(label1.trim() === ""){
+        isValid = false;
+        error3.textContent = "*This field is required";
+        label_1.style.borderColor = "red"
+    }
+    else{
+        error3.textContent = "";
+        label_1.style.borderColor = "initial";
+    }
+    if(number1.trim() === ""){
+        isValid = false;
+        error4.textContent = "*This field is required";
+        phone_number_1.style.borderColor = "red"
+    }
+    else{
+        error4.textContent = "";
+        phone_number_1.style.borderColor = "initial";
+    }
+    if(label2.trim() === ""){
+        isValid = false;
+        error5.textContent = "*This field is required";
+        label_2.style.borderColor = "red"
+    }
+    else{
+        error5.textContent = "";
+        label_2.style.borderColor = "initial";
+    }
+    if(number2.trim() === ""){
+        isValid = false;
+        error6.textContent = "*This field is required";
+        phone_number_2.style.borderColor = "red"
+    }
+    else{
+        error6.textContent = "";
+        phone_number_2.style.borderColor = "initial";
+    }
+    if(Email.trim() === ""){
+        isValid = false;
+        error7.textContent = "*This field is required";
+        email.style.borderColor = "red"
+    }
+    else{
+        error7.textContent = "";
+        email.style.borderColor = "initial";
+    }
+    if(bdate.trim() === ""){
+        isValid = false;
+        error8.textContent = "*This field is required";
+        birthdate.style.borderColor = "red"
+    }
+    else{
+        error8.textContent = "";
+        birthdate.style.borderColor = "initial";
+    }
+    if(notetext.trim() === ""){
+        isValid = false;
+        error9.textContent = "*This field is required";
+        note.style.borderColor = "red"
+    }
+    else{
+        error9.textContent = "";
+        note.style.borderColor = "initial";
+    }
+    if (isValid) {
+        InsertData();
+    }
+}
 // Create function to save and upload user data in database
+
 function InsertData()
 {
-    if (first_name.value != ""||last_name.value !=""||label_1.value !=""||phone_number_1.value !=""||label_2.value !=""||
-    phone_number_2.value !=""||email.value !="" ||birthdate.value !=""||note.value !="")
-    {   
+  
         try 
         {
             const docRef = addDoc(collection(db, 'Userdetails'), {
@@ -59,20 +163,14 @@ function InsertData()
             email.value = "";
             birthdate.value =  "";
             note.value = "";
-            user_image = "";
         }  
         catch (e) 
         {
             console.error("Error adding document: ", e);
         };
     } 
-    else
-    {
-        alert("Please fill all the fields");
-    }
-}
-upload.addEventListener('click',InsertData);
-// insert function ends here
+
+//insert function ends here
 // get user id from url
 const queryString = window.location.search;
 const newstr = queryString.substring(1,queryString.length);
@@ -106,6 +204,7 @@ catch(error)
 {
     console.log(error)
 }
+// update data in firestore
 function updateContact()
 {
     const data =
@@ -121,6 +220,7 @@ function updateContact()
         noteText:note.value,
         userImage:user_image,
     }
+    console.log(data);
     updateDoc(docRef, data)
     .then(docRef => 
     {
