@@ -175,6 +175,7 @@ function InsertData()
 const queryString = window.location.search;
 const newstr = queryString.substring(1,queryString.length);
 console.log(newstr);
+
 //get data from user id from firestore
 let docRef = doc(db, "Userdetails",newstr);
 try 

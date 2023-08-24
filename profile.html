@@ -98,52 +98,49 @@
             <div class="row">
                 <div class="col-md-8" id="column">
                     <div class="card-3 ">
-                        <img src="image/3.png" id="main_im"><input type="text" id="first_name"
-                            oninput="firstNameChange()" class="inp01" placeholder="First name ">
+                        <img src="image/3.png" id="main_im">
+                        <input type="text" id="first_name" class="inp01" placeholder="First name " oninput="eventChange(event,this.id)">
                         <span id="error1" class="error"></span>
                     </div>
                     <div class="card-3 ">
-                        .<input type="text" id="last_name" class="inp01" placeholder="Last name">
+                        .<input type="text" id="last_name" class="inp01" placeholder="Last name" oninput="eventChange(event,this.id)">
                         <span id="error2" class="error"></span>
                     </div>
                     <div class="card-3">
-                        <img src="image/11.png" id="main_im"><input type="text" id="label_1" class="inp01"
-                            placeholder="Home">
+                        <img src="image/11.png" id="main_im">
+                        <input type="text" id="label_1" class="inp01"placeholder="Home"oninput="eventChange(event,this.id)">
                         <span id="error3" class="error"></span>
                     </div>
                     <div class="card-3 ">
-                        <img src="image/10.png" id="main_im"> <input type="text" pattern="[0-9]{10}"
-                            id="phone_number_1" class="inp01" ondrop="return false;" onpaste="return false;"
-                            onkeypress='return event.charCode>=48 && event.charCode<=57' name="phone"
-                            placeholder="Phone number" maxlength="10">
+                        <img src="image/10.png" id="main_im"> 
+                        <input type="text" pattern="[0-9]{10}" id="phone_number_1" class="inp01" ondrop="return false;" onpaste="return false;"
+                            onkeypress='return event.charCode>=48 && event.charCode<=57' name="phone"placeholder="Phone number" maxlength="10"oninput="eventChange(event,this.id)">
                         <span id="error4" class="error"></span>
                     </div>
                     <div class="card-3 ">
-                        <img src="image/11.png" id="main_im"><input type="text" id="label_2" class="inp01"
-                            placeholder="Office">
+                        <img src="image/11.png" id="main_im">
+                        <input type="text" id="label_2" class="inp01"placeholder="Office"oninput="eventChange(event,this.id)">
                         <span id="error5" class="error"></span>
                     </div>
                     <div class="card-3 ">
-                        <img src="image/10.png" id="main_im"> <input type="text" pattern="[0-9]{10}"
-                            id="phone_number_2" class="inp01" ondrop="return false;" onpaste="return false;"
-                            onkeypress='return event.charCode>=48 && event.charCode<=57' name="phone"
-                            placeholder="Phone number" maxlength="10">
+                        <img src="image/10.png" id="main_im"> 
+                        <input type="text" pattern="[0-9]{10}"id="phone_number_2" class="inp01" ondrop="return false;" onpaste="return false;"
+                            onkeypress='return event.charCode>=48 && event.charCode<=57' name="phone" placeholder="Phone number" maxlength="10"oninput="eventChange(event,this.id)">
                         <span id="error6" class="error"></span>
                     </div>
                     <div class="card-3 ">
-                        <img src="image/mail_FILL0_wght400_GRAD0_opsz48.png" id="main_im"><input type="email"
-                            id="email" class="inp01" placeholder="Email">
+                        <img src="image/mail_FILL0_wght400_GRAD0_opsz48.png" id="main_im">
+                        <input type="email"id="email" class="inp01" placeholder="Email"oninput="eventChange(event,this.id)">
                         <span id="error7" class="error"></span>
                     </div>
                     <div class="card-3 ">
-                        <img src="image/cake_FILL0_wght400_GRAD0_opsz48.png" id="main_im"><input type="text"
-                            id="birthdate" class="inp01" placeholder="DD-MM-YYYY" onfocus="(this.type='date')"
-                            onblur="(this.type='text')">
+                        <img src="image/cake_FILL0_wght400_GRAD0_opsz48.png" id="main_im">
+                        <input type="text"id="birthdate" class="inp01" placeholder="DD-MM-YYYY" onfocus="(this.type='date')"onblur="(this.type='text')"oninput="eventChange(event,this.id)">
                         <span id="error8" class="error"></span>
                     </div>
                     <div class="card-3 ">
-                        <img src="image/note_FILL0_wght400_GRAD0_opsz48.png" id="main_im"><input type="text"
-                            id="note" class="inp001" placeholder="Note">
+                        <img src="image/note_FILL0_wght400_GRAD0_opsz48.png" id="main_im">
+                        <input type="text"id="note" class="inp001" placeholder="Note"oninput="eventChange(event,this.id)">
                         <span id="error9" class="error"></span>
                     </div>
                 </div>
@@ -160,15 +157,45 @@
 <!-- main section here -->
 <!-- script tag for inner functionality -->
 <script>
-
-
 // function for chnage color when data is inputed 
-function firstNameChange() {
-    let error = document.getElementById("error1");
-    let firstname = document.getElementById(first_name);
-        error.textContent = "";
-    first_name.style.borderColor = "initial";
-    console.log("EVENT OF FISDT NAME");
+function eventChange(event,control){
+    let con = control;
+    if(con == `first_name`){
+        error1.textContent = "";
+        first_name.style.borderColor = "initial";
+    }
+    if(con == `last_name`){
+        error2.textContent = "";
+        last_name.style.borderColor = "initial";
+    }
+    if(con == `label_1`){
+        error3.textContent = "";
+        label_1.style.borderColor = "initial";
+    }
+    if(con == `phone_number_1`){
+        error4.textContent = "";
+        phone_number_1.style.borderColor = "initial";
+    }
+    if(con == `label_2`){
+        error5.textContent = "";
+        label_2.style.borderColor = "initial";
+    }    
+    if(con == `phone_number_2`){
+        error6.textContent = "";
+        phone_number_2.style.borderColor = "initial";
+    }
+    if(con == `email`){
+        error7.textContent = "";
+        email.style.borderColor = "initial";
+    }
+    if(con == `birthdate`){
+        error8.textContent = "";
+        birthdate.style.borderColor = "initial";
+    }
+    if(con == `note`){
+        error9.textContent = "";
+        note.style.borderColor = "initial";
+    }
 }
 
 // redirect function
