@@ -175,17 +175,21 @@ function InsertData()
 const queryString = window.location.search;
 const newstr = queryString.substring(1,queryString.length);
 console.log(newstr);
-
+if(newstr != null){
+    formTable.style.display="none";
+}
 //get data from user id from firestore
 let docRef = doc(db, "Userdetails",newstr);
 try 
 {
     const docSnap = await getDoc(docRef);
     if(docSnap.exists()) {
+       
         console.log(docSnap.data());
         let data = docSnap.data();
-        if(data === null){
-            main.style.backgroundColor = "red";
+        if(data != null ){
+            formTable.style.display="block"; 
+            loaderclass.style.display="none";
         }
             first_name.value = `${data.firstName}`;
             last_name.value = `${data.lastName}`;
@@ -201,7 +205,9 @@ try
             update.style.display="block";
             upload.style.display="none"
     } else {
-        console.log("Document does not exist")
+        console.log("Document does not exist");
+        alert("Document does not exist");
+        window.location.href="contact.html";
     }
 } 
 catch(error) 
@@ -230,11 +236,11 @@ function updateContact()
     {
         console.log("A New Document Field has been added to an existing document");
         alert("Contact updated");
-        window.location.href="contact.html"
+        window.location.href="contact.html";
     })
     .catch(error => 
     {
         console.log(error);
     });
 }
-// update.addEventListener('click',updateContact());
+update.addEventListener('click',updateContact());

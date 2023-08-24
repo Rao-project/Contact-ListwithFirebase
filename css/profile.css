@@ -176,7 +176,6 @@ label:hover{background-color: rgb(216, 216, 216);}
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
 }
-
 /* Safari */
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
@@ -186,4 +185,7 @@ label:hover{background-color: rgb(216, 216, 216);}
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+.text-center{
+  margin-left: -18%;
 }

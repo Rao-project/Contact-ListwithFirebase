@@ -72,9 +72,13 @@
           </div>                     
           <hr>
             <div id="contactDetails">
-              <div class="loader"></div><h3 class="text-center">Data was Loading</h3>
+              <div class="loader"></div><h3 class="text-center">Data was Loading!</h3>
               <h1 class="text-center" id="nodatafound">No contacts found</h1>
             </div>
+            <div class="noContactFound">
+              <img src="image/nocontact.png" id="nocontactimg">
+            <h1 class="text-center">No contacts found</h1>
+          </div>
       </div>
      
     </main>
@@ -142,7 +146,6 @@ window.onload=validate();
 // Search contact 
 const nameInput =  document.getElementById("disabledTextInput");
 const contactList = document.getElementById('contactDetails');
-const noData = document.getElementById('nodatafound');
 function searchContact()
 {
  const searchTerm = nameInput.value.toLowerCase();
@@ -154,12 +157,16 @@ function searchContact()
 
             if (contactName.includes(searchTerm)) {
                 contact.style.display = 'block';
-                if(contact === null){
-                  noData.style.display="block"
-                }
+                // if(contact != null){
+                //   nodata.style.display = 'block';
+                // }
             } else {
               // const data = document.getElementById("data");
               contact.style.display = 'none'; 
+              // if(contact != null){
+              //   const nodata = document.getElementsByClassName("noContactFound");
+              //    nodata.style.display = 'block';
+              // }
             }
   }
 }

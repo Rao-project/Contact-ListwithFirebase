@@ -152,3 +152,9 @@ padding: 15px;
 .text-center{
   margin-left: -18%;
 }
+.noContactFound{
+  display: none;
+}
+#nocontactimg{
+  margin-left: 28%;
+}
