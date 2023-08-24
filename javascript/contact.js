@@ -32,20 +32,23 @@ const con = onSnapshot(q, (QuerySnapshot) => {
   QuerySnapshot.forEach((doc) => {
     fetchContact.push({ ...doc.data(), id: doc.id }); 
   });
+  // function for show data 
   function showdata(){
     var html = "<div>"
     console.log('FetchContact', fetchContact);
     fetchContact.map((data) => {
       console.log(data.id);
-      html += `<div class="card-2 contact" id='${data.id}' onclick="editcontact(this.id)">`;
-      html += '<div class="row">';
-      html += `<div class="col ">${data.firstName}</div>`;
-      html += `<div class="col">${data.phoneNumber1}</div>`;
-      html += `<div class="col"><img src="image/25.png" class="manu_list"><img src="image/15.png"class="edit"><img src="image/21.png" class="fav_list" ></div>`;
+      html += `<div class="card-2 contact" >`;
+      html += `<div class="row">`;
+      html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.firstName}</div>`;
+      html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.phoneNumber1}</div>`;
+      html += `<div class="col">
+      <img src="image/25.png" class="manu_list">
+      <img src="image/15.png" class="edit">
+      <img src="image/21.png" class="fav_list" ></div>`;
       html += '</div></div>';
     })
     document.getElementById("contactDetails").innerHTML = html;
   }
  showdata()
 });
-

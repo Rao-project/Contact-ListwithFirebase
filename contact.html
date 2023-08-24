@@ -69,7 +69,12 @@
                     <div class="col"><h6>NUMBER</h6></div>  
                     <div class="col text-right">ACTION</div>      
               </div>
-          </div>                     
+          </div>     
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>                
           <hr>
             <div id="contactDetails">
               <div class="loader"></div><h3 class="text-center">Data was Loading!</h3>
@@ -80,7 +85,6 @@
             <h1 class="text-center">No contacts found</h1>
           </div>
       </div>
-     
     </main>
    
 <!-- script tag for inner javascript functionality -->
@@ -169,6 +173,10 @@ function searchContact()
               // }
             }
   }
+}
+//  function for drop-down 
+function dropdown(id){
+  console.log("clicked",id);
 }
 </script>
 <!-- script tag for module and firebase setup -->
