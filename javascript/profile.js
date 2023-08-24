@@ -26,14 +26,14 @@ console.log(db);
 
 var user_image = localStorage.getItem('image');
 let user_mailID = localStorage.getItem('emailID');
-update.style.display="none";
-loaderclass.style.display="none";
+updateCon.style.display="none";
 
+// upload click event
 upload.addEventListener('click',function(e) {
     e.preventDefault();
     checkData();
 });
-
+// check data validation
 function checkData(){
 let fname = first_name.value;
 let lname  = last_name.value;
@@ -175,7 +175,9 @@ function InsertData()
 const queryString = window.location.search;
 const newstr = queryString.substring(1,queryString.length);
 console.log(newstr);
-
+if (newstr != null){
+    loader.style.display="none";
+}
 //get data from user id from firestore
 let docRef = doc(db, "Userdetails",newstr);
 try 
@@ -185,10 +187,6 @@ try
        
         console.log(docSnap.data());
         let data = docSnap.data();
-        if(data != null ){
-            formTable.style.display="block"; 
-            loaderclass.style.display="none";
-        }
             first_name.value = `${data.firstName}`;
             last_name.value = `${data.lastName}`;
             label_1.value = `${data.label1}`;
@@ -200,7 +198,7 @@ try
             note.value = `${data.noteText}`;
             const imgsrc = `${data.userImage}`;
             img002.src="data:image/jpg;base64,"+imgsrc;
-            update.style.display="block";
+            updateCon.style.display="block";
             upload.style.display="none"
     } else {
         console.log("Document does not exist");
@@ -215,6 +213,7 @@ catch(error)
 // update data in firestore
 function updateContact()
 {
+    console.log("funaction cliked");
     const data =
     {
         firstName:first_name.value,
@@ -241,4 +240,4 @@ function updateContact()
         console.log(error);
     });
 }
-update.addEventListener('click',updateContact());
+updateCon.addEventListener('click',updateContact);

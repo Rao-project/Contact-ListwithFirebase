@@ -77,7 +77,6 @@
         <!-- jainish -->
         <div class="col-md-9" id="column_1">
             <!-- form tag start here -->
-            <form id="formTable">
             <div class="header" id="myHeader">
                     <div class="pro">
                         &nbsp;&nbsp;<img src="image/17.png" id="img002" class="user_image"
@@ -88,7 +87,7 @@
                                 onchange="previewImage(event),image_uploaded();">
                         </div>
                         <div class="save">
-                            <button id="update" class="upload_button">Update</button>
+                            <input type="submit"id="updateCon" class="upload_button" value="Update">
                             <input type="submit" id="upload" class="upload_button" value="save">
                         </div>
                     </div>
@@ -111,6 +110,7 @@
                         <input type="text" id="label_1" class="inp01"placeholder="Home"oninput="eventChange(event,this.id)">
                         <span id="error3" class="error"></span>
                     </div>
+                     <div class="loader" id="loader"></div>
                     <div class="card-3 ">
                         <img src="image/10.png" id="main_im"> 
                         <input type="text" pattern="[0-9]{10}" id="phone_number_1" class="inp01" ondrop="return false;" onpaste="return false;"
@@ -146,12 +146,7 @@
                 </div>
             </div>
             <!-- input fiels ends here -->
-            </form>
-            <!-- form tag ends here -->
-            <div id="loaderclass">
-                <div class="loader"></div><h3 class="text-center">Data was Loading!</h3>
-            </div>
-        </div>
+           
 
 </main>
 <!-- main section here -->

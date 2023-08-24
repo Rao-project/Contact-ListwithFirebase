@@ -164,10 +164,10 @@ label:hover{background-color: rgb(216, 216, 216);}
   border: 1px solid red;
 }
 /* css for loader */
+.text-center{
+  margin-left: -18%;
+}
 .loader {
-  position: relative;
-  margin-top: 20%;
-  margin-left: 35%;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid #3498db;
@@ -176,6 +176,7 @@ label:hover{background-color: rgb(216, 216, 216);}
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
 }
+
 /* Safari */
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
@@ -186,6 +187,9 @@ label:hover{background-color: rgb(216, 216, 216);}
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-.text-center{
-  margin-left: -18%;
+#loader{
+ position: absolute;
+ display: flex;
+ padding: 80px;
+ margin-left: 35%;
 }
