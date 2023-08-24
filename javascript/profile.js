@@ -27,6 +27,7 @@ console.log(db);
 var user_image = localStorage.getItem('image');
 let user_mailID = localStorage.getItem('emailID');
 update.style.display="none";
+loaderclass.style.display="none";
 
 upload.addEventListener('click',function(e) {
     e.preventDefault();
@@ -135,7 +136,6 @@ let notetext = note.value;
 
 function InsertData()
 {
-  
         try 
         {
             const docRef = addDoc(collection(db, 'Userdetails'), {
@@ -175,9 +175,6 @@ function InsertData()
 const queryString = window.location.search;
 const newstr = queryString.substring(1,queryString.length);
 console.log(newstr);
-if(newstr != null){
-    formTable.style.display="none";
-}
 //get data from user id from firestore
 let docRef = doc(db, "Userdetails",newstr);
 try 
