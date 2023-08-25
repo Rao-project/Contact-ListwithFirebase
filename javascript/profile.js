@@ -154,15 +154,17 @@ function InsertData()
             });
             console.log("Document written IN DATABASE ");
             alert("Data inserted Succesfully");
-            first_name.value = "";
-            last_name.value = "";
-            label_1.value = "";
-            phone_number_1.value = "";
-            label_2.value = "";
-            phone_number_2.value = "";
-            email.value = "";
-            birthdate.value =  "";
-            note.value = "";
+            window.location.href="contact.html"
+            // first_name.value = "";
+            // last_name.value = "";
+            // label_1.value = "";
+            // phone_number_1.value = "";
+            // label_2.value = "";
+            // phone_number_2.value = "";
+            // email.value = "";
+            // birthdate.value =  "";
+            // note.value = "";
+            // img002.src="image/17.png";
         }  
         catch (e) 
         {

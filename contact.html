@@ -81,10 +81,11 @@
               <div class="loader"></div><h3 class="text-center">Data is Loading!</h3>
               <h1 class="text-center" id="nodatafound">No contacts found</h1>
             </div>
-            <div class="noContactFound">
+            <div id="noContactFound">
               <img src="image/nocontact.png" id="nocontactimg">
             <h1 class="text-center">No contacts found</h1>
           </div>
+          <div id="snackbar">This Contact is Deleted....</div>
       </div>
     </main>
 
@@ -166,25 +167,11 @@ function searchContact()
                 //   nodata.style.display = 'block';
                 // }
             } else {
-              // const data = document.getElementById("data");
               contact.style.display = 'none'; 
-              // if(contact != null){
-              //   const nodata = document.getElementsByClassName("noContactFound");
-              //    nodata.style.display = 'block';
-              // }
+              noContactFound.style.display="block"
             }
   }
 }
-//  function for drop-down 
-// function for favourite buttton
-function favourite(id){
-  console.log("Favorite clicked",id);
-  document.getElementById(`${id}`).style.backgroundColor="yellow";
- }
-// function for delete 
- function deleteCon(id){
-  console.log("clicked delete ", id);
- }
 //function for call 
 function calNow(no){
   if (no.trim() !== "") {

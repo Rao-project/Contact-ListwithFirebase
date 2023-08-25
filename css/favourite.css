@@ -5,123 +5,211 @@ header{
 background-color: rgb(250, 250, 250);
 padding: 15px;
 }
+.text-right{
+margin-right: 2%;
+}
+.text_right{
+margin-right: 6%;
+}
 #img1,#img2{
-    margin-left:10px;
-    float: left;
-    width: 30px;
+  margin-left:10px;
+  float: left;
+  width: 30px;
 }
+#icon_im{
+  width: 20px;}
+#main_im{
+    width: 30px;}
 #inp{
-    border-radius: 10px;
-    width: 100%;
-    padding:10px;
-}
-.col-sm-3{
-    size: 100%;
-    background-color:rgb(255, 255, 255) ;
-}
-.card-1{
-  padding: 10px;
-  border-radius:0px 20px 20px 0px ;
-  cursor: pointer;
-}
-.card-1:hover{
-    opacity: 1;
-    background-color: rgb(247, 247, 247);
-}
-.card-2{
-    padding: 15px;
-    border-radius:5px;
-    cursor: pointer;
-  }
-  .card-2:hover{
-      opacity:0.5;
-      background-color: rgb(247, 247, 247);
-  }
-  #icon_im{
-    width:20px;
-}  #main_im{
-  width:30px;
-}
-.edit{
-    padding-top:5px;
-    width: 18px;
-    float: right;
-    margin-left:9px ;
-}
-.manu_list{
-    padding-top:5px ;
-    width:18px ;
-    float: right;
-    margin-left:5px ;
-}
-.fav_list{
-    padding-top:5px ;
-    width:18px ;
-    float: right;
-    margin-left:5px ;
+  border-radius: 10px;
+  width: 100%;
+  padding:10px;
 }
 #column_1{
-    margin-top:40px ;
+margin-top:40px ;
+} 
+.col-sm-3{
+  size: 100%;
+  background-color:rgb(255, 255, 255) ;
 }
-#header_icon{
-    margin-top:25px;
-    float:left;
+
+.card-1{
+padding: 10px;
+border-radius:0px 20px 20px 0px ;
+cursor: pointer;
+}
+.card-1:hover{
+  opacity: 1;
+  background-color: rgb(247, 247, 247);
+}
+.card-2{
+  padding: 15px;
+  border-radius:5px;
+  cursor: pointer;
+}
+/* .card-2:hover{
+    opacity:0.5;
+    background-color: rgb(247, 247, 247);
+} */
+.edit{
+  padding-top:5px;
+  width: 18px;
+  float: right;
+  margin-left:9px ;
+}
+
+.fav_list{
+  padding-top:5px ;
+  width:18px ;
+  float: right;
+  margin-left:5px ;
+}
+.manu_list{
+padding-top:5px ;
+width:18px ;
+float: right;
+margin-left:5px ;
 }
 #btn_d{
-  padding:1px;
-
+padding:1px;
 }
+
 .card-12{
   width:200px;
   height:50px;
-     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);
-    transition: 0.5s;
-    border: 1px solid rgb(211, 202, 202);
-    border-radius: 60px;
-    padding: 10px;
+  align-content: center;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);
+  transition: 0.5s;
+  border: 1px solid rgb(211, 202, 202);
+  border-radius: 60px;
 }
 .card-12:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .dropbtn {
-  width:100%;
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+width:100%;
+background-color: #ffffff;
+color: rgb(24, 24, 24);
+padding: 16px;
+font-size: 16px;
+border:none;
+cursor: pointer;
 }
 .dropdown {
-  position: relative;
-  display: inline-block;
+position: relative;
+display: inline-block;
 }
-
 .dropdown-content {
-  display: none;
-  border-radius:10px;
-  position: absolute;
-  background-color: #f3f3f3;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+width:200px;
+display: none;
+border-radius:10px;
+position: absolute;
+background-color:#f3f3f3;
+min-width: 160px;
+overflow: auto;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
 }
 
 .dropdown-content a {
-  color: rgb(0, 0, 0);
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+color: rgb(0, 0, 0);
+padding: 12px 16px;
+text-decoration: none;
+display: block;
 }
 
-.dropdown a:hover {background-color: #ddd;}
+.dropdown a:hover {background-color: #ffffff;}
 
 .show {display: block;}
 
+/* css for loader */
+.loader {
+margin-top: 20%;
+margin-left: 35%;
+border: 16px solid #f3f3f3;
+border-radius: 50%;
+border-top: 16px solid #3498db;
+width: 120px;
+height: 120px;
+-webkit-animation: spin 2s linear infinite; /* Safari */
+animation: spin 1.5s linear infinite;
+}
 
-  
+/* Safari */
+@-webkit-keyframes spin {
+0% { -webkit-transform: rotate(0deg); }
+100% { -webkit-transform: rotate(360deg); }
+}
 
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+/* data not found css */
+#nodatafound{
+margin-left: -15%;
+display: none;
+}
+.text-center{
+margin-left: -18%;
+}
+#noContactFound{
+display: none;
+}
+#nocontactimg{
+margin-left: 28%;
+}
+#mySelect{
+display: none;
+}
+#menu:hover #mySelect{
+display: block;
+}
+/* css for snakbar */
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+visibility: hidden; /* Hidden by default. Visible on click */
+min-width: 250px; /* Set a default minimum width */
+margin-left: -125px; /* Divide value of min-width by 2 */
+background-color: #333; /* Black background color */
+color: #fff; /* White text color */
+text-align: center; /* Centered text */
+border-radius: 2px; /* Rounded borders */
+padding: 16px; /* Padding */
+position: fixed; /* Sit on top of the screen */
+z-index: 1; /* Add a z-index if needed */
+left: 50%; /* Center the snackbar */
+bottom: 30px; /* 30px from the bottom */
+}
 
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+visibility: visible; /* Show the snackbar */
+/* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+However, delay the fade out process for 2.5 seconds */
+-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
 
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+from {bottom: 0; opacity: 0;}
+to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+from {bottom: 0; opacity: 0;}
+to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+from {bottom: 30px; opacity: 1;}
+to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+from {bottom: 30px; opacity: 1;}
+to {bottom: 0; opacity: 0;}
+}
