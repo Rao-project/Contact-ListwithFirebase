@@ -167,6 +167,9 @@ display: none;
 #menu:hover #mySelect{
 display: block;
 }
+#nocontact{
+  display: none;
+}
 /* css for snakbar */
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #snackbar {

@@ -38,6 +38,9 @@ const con = onSnapshot(q, (QuerySnapshot) => {
   function showdata(){
     var html = "<div>"
     console.log('FetchContact', fetchContact);
+    if(fetchContact == ""){
+        nocontact.style.display="block";
+    }
     fetchContact.map((data) => {
       console.log(data.id);
       html += `<div class="card-2 contact" >`;
