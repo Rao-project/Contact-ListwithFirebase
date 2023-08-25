@@ -149,7 +149,8 @@ function InsertData()
                 birthDate:birthdate.value,
                 noteText:note.value,
                 userImage:user_image,
-                userMailid:user_mailID
+                userMailid:user_mailID,
+                favourite:false
             });
             console.log("Document written IN DATABASE ");
             alert("Data inserted Succesfully");

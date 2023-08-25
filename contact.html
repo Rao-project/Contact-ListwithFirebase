@@ -65,9 +65,10 @@
             <div class="col-md-9" id="column_1">
               <div class="card-02">                                     
                   <div class="row">
-                    <div class="col"><h6>NAME</h6></div>
-                    <div class="col"><h6>NUMBER</h6></div>  
-                    <div class="col text-right">ACTION</div>      
+                    <div class="col text_right"><h6>NAME</h6></div>
+                    <div class="col text_right"><h6>NUMBER</h6></div>  
+                     <div class="col text_right"><h6>EMAIL ID</h6></div>  
+                    <div class="col text-right"><h6>ACTION</h6></div>      
               </div>
           </div>     
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -77,7 +78,7 @@
           </ul>                
           <hr>
             <div id="contactDetails">
-              <div class="loader"></div><h3 class="text-center">Data was Loading!</h3>
+              <div class="loader"></div><h3 class="text-center">Data is Loading!</h3>
               <h1 class="text-center" id="nodatafound">No contacts found</h1>
             </div>
             <div class="noContactFound">
@@ -86,7 +87,7 @@
           </div>
       </div>
     </main>
-   
+
 <!-- script tag for inner javascript functionality -->
 <script>
   // redirect function
@@ -175,8 +176,24 @@ function searchContact()
   }
 }
 //  function for drop-down 
-function dropdown(id){
-  console.log("clicked",id);
+// function for favourite buttton
+function favourite(id){
+  console.log("Favorite clicked",id);
+  document.getElementById(`${id}`).style.backgroundColor="yellow";
+ }
+// function for delete 
+ function deleteCon(id){
+  console.log("clicked delete ", id);
+ }
+//function for call 
+function calNow(no){
+  if (no.trim() !== "") {
+            // Create a 'tel:' link
+            window.location.href = `tel:${encodeURIComponent(no)}`;
+            console.log("calling");
+        } else {
+            alert("Please enter a valid phone number.");
+        }
 }
 </script>
 <!-- script tag for module and firebase setup -->
