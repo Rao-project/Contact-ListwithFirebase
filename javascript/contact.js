@@ -62,10 +62,6 @@ const con = onSnapshot(q, (QuerySnapshot) => {
       html += '</div></div>';
     })
     document.getElementById("contactDetails").innerHTML = html;
-    if(dataCon.favourite == true){
-      console.log("favourite",data.id);
-      document.getElementsByClassName('fav_list').style.backgroundColor="yellow";
-     }
     //  console.log(dataCon.favourite==true);
   }
 

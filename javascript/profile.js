@@ -26,6 +26,7 @@ console.log(db);
 
 var user_image = localStorage.getItem('image');
 let user_mailID = localStorage.getItem('emailID');
+console.log(user_mailID);
 updateCon.style.display="none";
 
 // upload click event
@@ -153,18 +154,19 @@ function InsertData()
                 favourite:false
             });
             console.log("Document written IN DATABASE ");
-            alert("Data inserted Succesfully");
-            window.location.href="contact.html"
-            // first_name.value = "";
-            // last_name.value = "";
-            // label_1.value = "";
-            // phone_number_1.value = "";
-            // label_2.value = "";
-            // phone_number_2.value = "";
-            // email.value = "";
-            // birthdate.value =  "";
-            // note.value = "";
-            // img002.src="image/17.png";
+            localStorage.removeItem('image');
+            // alert("Data inserted Succesfully");
+            // window.location.href="contact.html"
+            first_name.value = "";
+            last_name.value = "";
+            label_1.value = "";
+            phone_number_1.value = "";
+            label_2.value = "";
+            phone_number_2.value = "";
+            email.value = "";
+            birthdate.value =  "";
+            note.value = "";
+            img002.src="image/17.png";
         }  
         catch (e) 
         {
