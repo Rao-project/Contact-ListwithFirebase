@@ -203,6 +203,9 @@ try
             note.value = `${data.noteText}`;
             const imgsrc = `${data.userImage}`;
             img002.src="data:image/jpg;base64,"+imgsrc;
+            if(data.userImage == null){
+                img002.src="image/17.png";
+            }
             updateCon.style.display="block";
             upload.style.display="none"
     } else {
