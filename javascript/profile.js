@@ -26,7 +26,6 @@ console.log(db);
 
 var user_image = localStorage.getItem('image');
 let user_mailID = localStorage.getItem('emailID');
-console.log(user_mailID);
 updateCon.style.display="none";
 
 // upload click event
@@ -241,7 +240,7 @@ function updateContact()
     {
         console.log("A New Document Field has been added to an existing document");
         alert("Contact updated");
-        window.location.href="contact.html";
+        // window.location.href="contact.html";
     })
     .catch(error => 
     {

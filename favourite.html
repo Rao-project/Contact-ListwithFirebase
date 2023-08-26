@@ -51,16 +51,10 @@
              <div class="card-1">
                 <img src="image/6.png" id="icon_im">&nbsp;Bin  
             </div><br>
-              
-            <h5>Labels</h5><div class="card-1">
-                <img src="image/11.png" id="icon_im">&nbsp; Manage and Fix
-            </div>
-            <div class="card-1">
-                <img src="image/11.png" id="icon_im">&nbsp; Manage and Fix
-            </div>
+            <h5>Labels</h5>
+             <button class="btn btn-danger" id="logoutbtn" onclick="logOut()">Log-out</button>
         </div>
                 <!-- contact list -->
-       
           <div class="col-md-9" id="column_1">
             <div class="card-02">                                     
                 <div class="row">
@@ -174,6 +168,14 @@ function calNow(no){
         } else {
             alert("Please enter a valid phone number.");
         }
+}
+function logOut(){
+  const keys =Object.keys(localStorage);
+  for(const key of keys){
+    localStorage.removeItem(key);
+  }
+  window.location.href=('index.html');
+  alert("You are Log-out now ");
 }
 </script>
 <!-- script tag for module type -->

@@ -23,7 +23,8 @@ console.log(app);
 const db = getFirestore(app);
 console.log(db);
 let user_mailID = localStorage.getItem('emailID');
-
+const image = localStorage.getItem('photoURL');
+userDetailImage.src=image;
 const q = query(collection(db,`${user_mailID}`));
 // let detail = contactdetails.innerHTML;
 
@@ -44,14 +45,16 @@ const con = onSnapshot(q, (QuerySnapshot) => {
       console.log(data.id);
       html += `<div class="card-2 contact" >`;
       html += `<div class="row">`;
-      html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.firstName}</div>`;
+      const img = data.userImage;
+      html += `<div class="col-2"><img src="image/user(1).png" id="profilePic">
+      ${data.firstName}</div>`;
       html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.phoneNumber1}</div>`;
       html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.eMail}</div>`;
       html += `<div class="col">
       <img src="image/25.png" class="manu_list" id="menu"id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">    
       <div class="dropdown">
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><button type="button"class="dropdown-item" id='${data.id}' onclick="deleteCon(this.id),snakBar()">Delete</button></li>
+          <li><button type="button"class="dropdown-item btn btn-danger" id='${data.id}' onclick="deleteCon(this.id),snakBar()">Delete</button></li>
           <li><button type="button"class="dropdown-item" id='${data.phoneNumber1}' onclick="calNow(this.id)">Call</button></li>
         </ul>
       </div>

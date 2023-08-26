@@ -1,5 +1,6 @@
 body {
     font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: small;
 }
 header{
 background-color: rgb(250, 250, 250);
@@ -212,4 +213,18 @@ padding: 15px;
 @keyframes fadeout {
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
+}
+/* User details css start here */
+
+#userDetailImage{
+  height: 30px;
+  width: 30px;
+}
+#logoutbtn{
+  margin-top: 30%;
+}
+#profilePic{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
