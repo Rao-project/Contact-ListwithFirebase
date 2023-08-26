@@ -92,7 +92,7 @@ function deleteCon(id){
       console.log("Favorite clicked",id);
       document.getElementById(`${id}`).src="image/21.png";
       const userid = id.substring(6,id.length);
-      let docRef = doc(db, "Userdetails",userid);
+      let docRef = doc(db, `${user_mailID}`,userid);
       const data = {favourite:false}
       updateDoc(docRef, data)
       .then(docRef => 

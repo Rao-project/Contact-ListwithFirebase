@@ -155,7 +155,7 @@ function InsertData()
             });
             console.log("Document written IN DATABASE ");
             localStorage.removeItem('image');
-            // alert("Data inserted Succesfully");
+            alert("Data inserted Succesfully");
             // window.location.href="contact.html"
             first_name.value = "";
             last_name.value = "";
