@@ -68,7 +68,7 @@ const con = onSnapshot(q, (QuerySnapshot) => {
      }
     //  console.log(dataCon.favourite==true);
   }
-  
+
  showdata()
 });
 // function for delete 
