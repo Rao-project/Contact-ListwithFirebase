@@ -139,7 +139,7 @@ function InsertData()
 {
         try 
         {
-            const docRef = addDoc(collection(db, 'Userdetails'), {
+            const docRef = addDoc(collection(db, `${user_mailID}`), {
                 firstName:first_name.value,
                 lastName:last_name.value,
                 label1:label_1.value,
@@ -184,7 +184,7 @@ if (newstr != null){
     loader.style.display="none";
 }
 //get data from user id from firestore
-let docRef = doc(db, "Userdetails",newstr);
+let docRef = doc(db,  `${user_mailID}`,newstr);
 try 
 {
     const docSnap = await getDoc(docRef);

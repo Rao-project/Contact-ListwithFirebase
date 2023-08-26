@@ -22,8 +22,9 @@ const app = initializeApp(firebaseConfig);
 console.log(app);
 const db = getFirestore(app);
 console.log(db);
+let user_mailID = localStorage.getItem('emailID');
 
-const q = query(collection(db, "/Userdetails"));
+const q = query(collection(db,`${user_mailID}`));
 // let detail = contactdetails.innerHTML;
 
 let fetchContact = 0;
@@ -69,7 +70,7 @@ const con = onSnapshot(q, (QuerySnapshot) => {
 });
 // function for delete 
 function deleteCon(id){
-const docRef = doc(db, "/Userdetails", id);
+const docRef = doc(db, `${user_mailID}`, id);
 deleteDoc(docRef)
 .then(() => {
     console.log("Entire Document has been deleted successfully.");
