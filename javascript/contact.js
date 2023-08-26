@@ -27,6 +27,7 @@ const q = query(collection(db, "/Userdetails"));
 // let detail = contactdetails.innerHTML;
 
 let fetchContact = 0;
+let dataCon = 0;
 const con = onSnapshot(q, (QuerySnapshot) => {
   fetchContact = [];
   QuerySnapshot.forEach((doc) => {
@@ -36,17 +37,18 @@ const con = onSnapshot(q, (QuerySnapshot) => {
   function showdata(){
     var html = "<div>"
     console.log('FetchContact', fetchContact);
+    if(fetchContact == ""){
+      noContactFound.style.display="block";
+    }
     fetchContact.map((data) => {
       console.log(data.id);
+      dataCon=data;
+     
       html += `<div class="card-2 contact" >`;
       html += `<div class="row">`;
       html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.firstName}</div>`;
       html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.phoneNumber1}</div>`;
       html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.eMail}</div>`;
-      if(data.favourite == true){
-       console.log("favourite",data.favourite);
-      //  image.style.backgroundColor="yellow";
-      }
       html += `<div class="col">
       <img src="image/25.png" class="manu_list" id="menu"id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">    
       <div class="dropdown">
@@ -60,7 +62,13 @@ const con = onSnapshot(q, (QuerySnapshot) => {
       html += '</div></div>';
     })
     document.getElementById("contactDetails").innerHTML = html;
+    if(dataCon.favourite == true){
+      console.log("favourite",data.id);
+      document.getElementsByClassName('fav_list').style.backgroundColor="yellow";
+     }
+    //  console.log(dataCon.favourite==true);
   }
+  
  showdata()
 });
 // function for delete 

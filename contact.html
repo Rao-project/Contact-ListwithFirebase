@@ -163,12 +163,14 @@ function searchContact()
 
             if (contactName.includes(searchTerm)) {
                 contact.style.display = 'block';
-                // if(contact != null){
-                //   nodata.style.display = 'block';
-                // }
+                noContactFound.style.display="none"
             } else {
               contact.style.display = 'none'; 
-              noContactFound.style.display="block"
+             
+              if(contact != ""){
+                noContactFound.style.display="block"
+                }
+              // noContactFound.style.display="block"
             }
   }
 }
