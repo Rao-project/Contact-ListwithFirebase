@@ -46,7 +46,7 @@ const con = onSnapshot(q, (QuerySnapshot) => {
       html += `<div class="card-2 contact" >`;
       html += `<div class="row">`;
       const img = data.userImage;
-      html += `<div class="col-2"><img src="image/user.png" id="profilePic">
+      html += `<div class="col-2"><img src="data:image/jpg;base64,${data.userImage}" id="profilePic">
       ${data.firstName}</div>`;
       html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.phoneNumber1}</div>`;
       html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.eMail}</div>`;
