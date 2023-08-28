@@ -212,10 +212,17 @@ padding: 15px;
 #userDetailImage{
   height: 30px;
   width: 30px;
-  float: right;
+  margin-left:60%;
+  margin-top: 1%;
 }
 #logoutbtn{
-  margin-top: 30%;
+  float: right;
+  background-color: rgb(233, 233, 233);
+  color: rgb(122, 122, 122);
+}
+#logoutbtn:hover {
+  color: white;
+  background-color: rgb(247, 98, 98);
 }
 #profilePic{
   height: 30px;
