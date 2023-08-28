@@ -27,7 +27,8 @@ console.log(db);
 var user_image = localStorage.getItem('image');
 let user_mailID = localStorage.getItem('emailID');
 updateCon.style.display="none";
-
+const image = localStorage.getItem('photoURL');
+userDetailImage.src=image;
 // upload click event
 upload.addEventListener('click',function(e) {
     e.preventDefault();
@@ -202,8 +203,9 @@ try
             note.value = `${data.noteText}`;
             const imgsrc = `${data.userImage}`;
             img002.src="data:image/jpg;base64,"+imgsrc;
-            if(data.userImage == null){
+            if(!data.userImage){
                 img002.src="image/17.png";
+                console.log("user image null");
             }
             updateCon.style.display="block";
             upload.style.display="none"
@@ -217,10 +219,6 @@ catch(error)
 {
     console.log(error)
 }
-if(user_image == null){
-    console.log("user image null");
-}
-
 // update data in firestore
 function updateContact()
 {

@@ -47,9 +47,15 @@ const con = onSnapshot(q, (QuerySnapshot) => {
       console.log(data.id);
       html += `<div class="card-2 contact" >`;
       html += `<div class="row">`;
-      const img = data.userImage;
-      html += `<div class="col-2"><img src="data:image/jpg;base64,${data.userImage}" id="profilePic">${data.firstName}</div>`;
-      html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.phoneNumber1}</div>`;
+      if(!data.userImage){
+        const fName = `${data.firstName}`;
+        const initials = fName.charAt(0);
+        html += `<div class="col-3 col-lm-3"style="display:inline-flex;"><div id="profileImage" >${initials}</div>${data.firstName}</div>`;
+      }
+      else{
+        html += `<div class="col-3 col-lm-3"><img src="data:image/jpg;base64,${data.userImage}" id="profilePic">
+        ${data.firstName}</div>`;
+      } html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.phoneNumber1}</div>`;
       html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.eMail}</div>`;
       html += `<div class="col">
       <img src="image/25.png" class="manu_list" id="menu"id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">    
