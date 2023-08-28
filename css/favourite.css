@@ -219,3 +219,24 @@ to {bottom: 0; opacity: 0;}
 #logoutbtn{
   margin-top: 20%;
 }
+#profilePic{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+#userDetailImage{
+  height: 30px;
+  width: 30px;
+}
+#picImage{
+  font-family: Arial, Helvetica, sans-serif;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: #004D3C;
+  font-size: 3.5rem;
+  color: #fff;
+  text-align: center;
+  line-height: 10rem;
+  margin: 2rem 0;
+}

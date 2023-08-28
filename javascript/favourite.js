@@ -24,7 +24,8 @@ const db = getFirestore(app);
 console.log(db);
 let user_mailID = localStorage.getItem('emailID');
 const UserdetailsRef = collection(db, `${user_mailID}`);
-
+const image = localStorage.getItem('photoURL');
+userDetailImage.src=image;
 const q = query(UserdetailsRef, where("favourite", "==", true));
 // let detail = contactdetails.innerHTML;
 
@@ -46,7 +47,8 @@ const con = onSnapshot(q, (QuerySnapshot) => {
       console.log(data.id);
       html += `<div class="card-2 contact" >`;
       html += `<div class="row">`;
-      html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.firstName}</div>`;
+      const img = data.userImage;
+      html += `<div class="col-2"><img src="data:image/jpg;base64,${data.userImage}" id="profilePic">${data.firstName}</div>`;
       html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.phoneNumber1}</div>`;
       html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.eMail}</div>`;
       html += `<div class="col">

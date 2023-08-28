@@ -6,12 +6,6 @@ header{
 background-color: rgb(250, 250, 250);
 padding: 15px;
 }
-.text-right{
-  margin-right: 2%;
-}
-.text_right{
-  margin-right: 6%;
-}
 #img1,#img2{
     margin-left:10px;
     float: left;
@@ -215,10 +209,10 @@ padding: 15px;
   to {bottom: 0; opacity: 0;}
 }
 /* User details css start here */
-
 #userDetailImage{
   height: 30px;
   width: 30px;
+  float: right;
 }
 #logoutbtn{
   margin-top: 30%;
@@ -227,4 +221,22 @@ padding: 15px;
   height: 30px;
   width: 30px;
   border-radius: 50%;
+}
+#profileImage{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #512DA8;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+}
+#text_right{
+  padding-left: 40%;
+}
+@media screen and (max-width: 768px){
+  #text_right{
+    padding-left: 10%;
+  }
 }

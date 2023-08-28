@@ -194,3 +194,8 @@ label:hover{background-color: rgb(216, 216, 216);}
  padding: 80px;
  margin-left: 35%;
 }
+#userDetailImage{
+  height: 30px;
+  width: 30px;
+  float: right;
+}

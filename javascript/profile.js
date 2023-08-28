@@ -217,10 +217,15 @@ catch(error)
 {
     console.log(error)
 }
+if(user_image == null){
+    console.log("user image null");
+}
+
 // update data in firestore
 function updateContact()
 {
     console.log("funaction cliked");
+    const user_image = localStorage.getItem('image');
     const data =
     {
         firstName:first_name.value,
@@ -240,6 +245,7 @@ function updateContact()
     {
         console.log("A New Document Field has been added to an existing document");
         alert("Contact updated");
+        // localStorage.removeItem('image');
         // window.location.href="contact.html";
     })
     .catch(error => 

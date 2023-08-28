@@ -19,7 +19,9 @@
           <div class="col-sm-5" > 
             <input type="text" id="disabledTextInput" class="form-control" placeholder="Search" width="50px">
           </div>
-        
+          <div class="col">
+              <img src="image/user.png" id="userDetailImage" class="float-right rounded-circle">
+            </div>
          </header>
     <main>
         
@@ -144,12 +146,13 @@ function searchContact()
 
             if (contactName.includes(searchTerm)) {
                 contact.style.display = 'block';
-                // if(contact != null){
-                //   nodata.style.display = 'block';
-                // }
+                noContactFound.style.display="none"
             } else {
-              contact.style.display = 'none'; 
-              noContactFound.style.display="block"
+              contact.style.display = 'none';
+              if(contact != 0){
+                noContactFound.style.display="block"
+                }
+              // noContactFound.style.display="block"
             }
   }
 }
