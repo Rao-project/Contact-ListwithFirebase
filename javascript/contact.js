@@ -47,18 +47,16 @@ const con = onSnapshot(q, (QuerySnapshot) => {
       html += `<div class="row">`;
       if(!data.userImage){
         const fName = `${data.firstName}`;
-        console.log(fName);
         const initials = fName.charAt(0);
-        console.log(initials);
-        html += `<div class="col-3 col-lm-3"><div id="profileImage">${initials}</div>${data.firstName}</div>`;
+        html += `<div class="col-3 col-lm-3"style="display:inline-flex;"><div id="profileImage" >${initials}</div>${data.firstName}</div>`;
       }
       else{
         html += `<div class="col-3 col-lm-3"><img src="data:image/jpg;base64,${data.userImage}" id="profilePic">
         ${data.firstName}</div>`;
       }
-      html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.phoneNumber1}</div>`;
-      html += `<div class="col"id='${data.id}' onclick="editcontact(this.id)">${data.eMail}</div>`;
-      html += `<div class="col col-sm-2">
+      html += `<div class="col-4" id='${data.id}' onclick="editcontact(this.id)">${data.phoneNumber1}</div>`;
+      html += `<div class="col" id='${data.id}' onclick="editcontact(this.id)">${data.eMail}</div>`;
+      html += `<div class="col col-sm-3">
       <img src="image/25.png" class="manu_list" id="menu"id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">    
       <div class="dropdown">
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
