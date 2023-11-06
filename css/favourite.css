@@ -15,6 +15,11 @@ margin-right: 6%;
   margin-left:10px;
   float: left;
   width: 30px;
+  cursor: pointer;
+}
+#img2:hover{
+  background-color: rgba(0, 0, 0, 0.205);
+  border-radius: 30%;
 }
 #icon_im{
   width: 20px;}
@@ -217,7 +222,13 @@ from {bottom: 30px; opacity: 1;}
 to {bottom: 0; opacity: 0;}
 }
 #logoutbtn{
-  margin-top: 20%;
+  float: right;
+  background-color: rgb(233, 233, 233);
+  color: rgb(122, 122, 122);
+}
+#logoutbtn:hover {
+  color: white;
+  background-color: rgb(247, 98, 98);
 }
 #profilePic{
   height: 30px;
@@ -227,6 +238,8 @@ to {bottom: 0; opacity: 0;}
 #userDetailImage{
   height: 30px;
   width: 30px;
+  margin-right: 5%;
+  margin-top: 1%;
 }
 #profileImage{
   width: 30px;

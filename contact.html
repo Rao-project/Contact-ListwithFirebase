@@ -22,7 +22,7 @@
             </div>
             <div class="col-3 ">
               <button class="btn" id="logoutbtn" onclick="logOut()">Log-out</button>
-              <img src="image/user.png" id="userDetailImage" class="float-right rounded-circle">
+              <img src="image/user.png" id="userDetailImage" class="float-right rounded-circle">  
 
             </div>
 
@@ -180,15 +180,6 @@ function calNow(no){
         } else {
             alert("Please enter a valid phone number.");
         }
-}
-// log out fuccntion start 
-function logOut(){
-  const keys =Object.keys(localStorage);
-  for(const key of keys){
-    localStorage.removeItem(key);
-  }
-  window.location.href=('index.html');
-  alert("You are Log-out now ");
 }
 
  //fucntion for createing profile pic 

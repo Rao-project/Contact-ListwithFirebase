@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+import { initializeApp} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 //  import {  ref , set , push  } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
 import { getFirestore, collection, onSnapshot, query ,doc , deleteDoc, updateDoc, addDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -22,6 +23,7 @@ const app = initializeApp(firebaseConfig);
 console.log(app);
 const db = getFirestore(app);
 console.log(db);
+const auth = getAuth(app);
 let user_mailID = localStorage.getItem('emailID');
 const image = localStorage.getItem('photoURL');
 userDetailImage.src=image;
@@ -64,8 +66,13 @@ const con = onSnapshot(q, (QuerySnapshot) => {
           <li><button type="button"class="dropdown-item" id='${data.phoneNumber1}' onclick="calNow(this.id)">Call</button></li>
         </ul>
       </div>
-      <img src="image/15.png" class="edit" id='${data.id}' onclick="editcontact(this.id)">
-      <img src="image/21.png" class="fav_list" id='image-${data.id}' onclick="favourite(this.id)"></div>`;
+      <img src="image/15.png" class="edit" id='${data.id}' onclick="editcontact(this.id)">`;
+      if (data.favourite==true) {
+        html +=`<img src="image/star.png" class="fav_list" id='image-${data.id}' onclick="favourite(this.id)"></div>`;
+      }
+      else{
+        html +=`<img src="image/21.png" class="fav_list" id='image-${data.id}' onclick="favourite(this.id)"></div>`;
+      }
       html += '</div></div>';
     })
     document.getElementById("contactDetails").innerHTML = html;
@@ -111,6 +118,26 @@ function favourite(id){
       console.log(error);
   });
  }
+ // log out fuccntion start 
+document.getElementById('logoutbtn').onclick=()=>{
+  let choice=window.confirm('Are you sure to logout !')
+  if (choice) {
+    signOut(auth).then(() => {
+      window.location.href=('index.html');
+      const keys =Object.keys(localStorage);
+      for(const key of keys){
+        localStorage.removeItem(key);
+      }
+      window.location.href=('index.html');
+
+    }).catch((error) => {
+      // An error happened.
+    });
+
+  }
+
+  alert("You are Log-out now ");
+}
  window.favourite = favourite;
  window.deleteCon = deleteCon;
  window.snakBar = snakBar;
