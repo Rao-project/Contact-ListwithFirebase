@@ -10,6 +10,11 @@ padding: 15px;
     margin-left:10px;
     float: left;
     width: 30px;
+    cursor: pointer;
+}
+#img2:hover{
+  background-color: rgba(0, 0, 0, 0.205);
+  border-radius: 30%;
 }
 #icon_im{
     width: 20px;}
