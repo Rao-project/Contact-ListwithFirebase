@@ -14,7 +14,7 @@
     storageBucket: "contact-list-6c0b6.appspot.com",
     messagingSenderId: "976760547893",
     appId: "1:976760547893:web:b7633b622a38f58fc95f7c",
-    measurementId: "G-64M037352H""
+    measurementId: "G-64M037352H"
   };
 
  // Initialize Firebase
