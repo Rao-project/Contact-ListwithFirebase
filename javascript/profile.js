@@ -8,14 +8,13 @@
  // Your web app's Firebase configuration
  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
  const firebaseConfig = {
-   apiKey: "AIzaSyC7zh6TMhENRTmH33CYiiWA2WdQ3ZyslB8",
-   authDomain: "contact-list-project-7cd3e.firebaseapp.com",
-   databaseURL: "https://contact-list-project-7cd3e-default-rtdb.firebaseio.com",
-   projectId: "contact-list-project-7cd3e",
-   storageBucket: "contact-list-project-7cd3e.appspot.com",
-   messagingSenderId: "25095560904",
-   appId: "1:25095560904:web:dcb700a6562d98cb444ffd",
-   measurementId: "G-SWDHR10C3T"
+   apiKey: "AIzaSyAhMWClfYkL6tXqxz__Qsh9YOJuLQmu938",
+    authDomain: "contact-list-6c0b6.firebaseapp.com",
+    projectId: "contact-list-6c0b6",
+    storageBucket: "contact-list-6c0b6.appspot.com",
+    messagingSenderId: "976760547893",
+    appId: "1:976760547893:web:b7633b622a38f58fc95f7c",
+    measurementId: "G-64M037352H"
  };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
