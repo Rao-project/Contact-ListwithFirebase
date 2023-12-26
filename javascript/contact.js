@@ -132,10 +132,8 @@ document.getElementById('logoutbtn').onclick=()=>{
     }).catch((error) => {
       // An error happened.
     });
-
+    alert("You are Log-out now ");
   }
-
-  alert("You are Log-out now ");
 }
  window.favourite = favourite;
  window.deleteCon = deleteCon;
