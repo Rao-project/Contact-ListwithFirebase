@@ -173,13 +173,23 @@ function calNow(no){
         }
 }
 function logOut(){
-  const keys =Object.keys(localStorage);
-  for(const key of keys){
-    localStorage.removeItem(key);
-  }
-  window.location.href=('index.html');
-  alert("You are Log-out now ");
+ let choice=window.confirm('Are you sure to logout !')
+  if (choice) {
+    signOut(auth).then(() => {
+      window.location.href=('index.html');
+      const keys =Object.keys(localStorage);
+      for(const key of keys){
+        localStorage.removeItem(key);
+      }
+      window.location.href=('index.html');
+
+    }).catch((error) => {
+      // An error happened.
+    });
+    alert("You are Log-out now ");
+  } 
 }
+    
 </script>
 <!-- script tag for module type -->
 <script type="module" src="javascript/favourite.js"></script>
